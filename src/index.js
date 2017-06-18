@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 import style from './styl/style.styl';
-
-import Tabs from './components/tabs';
-import Alert from './components/alert';
+import ActionBar from './components/action-bar';
 
 let CloseButton = (props) => (props)
 
-class Settings extends Component {
+export default class MovieDetails extends Component {
     render() {
         let {state, props} = this;
-
         return (
-                <div className={[style['settings'], props.settings.get('showAdvancedsettings')?'show-advanced':''].join(' ')}>
-                        <Alert message={props.t('Saved')}/>
-                        <Tabs {...props}/>
-                </div>
+            <div className={style.layout}>
+                    <ActionBar />
+            </div>
         );
     }
 }
-
-export default translate(['settings'], {wait: true, withRef: true})(Settings);
