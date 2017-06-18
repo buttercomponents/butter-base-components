@@ -1,6 +1,6 @@
 {
   "name": "butter-component-movie-details",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "A Butter Component to show the movie details",
   "main": "dist/bundle.js",
   "scripts": {
@@ -34,10 +34,7 @@
     "butter-component-builder": "buttercomponents/butter-component-builder"
   },
   "dependencies": {
-    "butter-action-types": "buttercomponents/butter-action-types",
-    "butter-component-qrcode": "buttercomponents/butter-component-qrcode",
     "react-i18next": "^3.1.0",
-    "react-simpletabs": "^0.7.0",
     "react-transition-group": "^1.1.2"
   }
 }
