@@ -71,4 +71,4 @@ let Buttons = {
     GoBackButton: translate(['go-back-button'], {wait: true, withRef: true})(GoBackButton)
 }
 
-export {Buttons}
+export {Buttons as default}

@@ -33,4 +33,4 @@ let Modals = {
     ButterModal: translate(['butter-modal'], {wait: true, withRef: true})(ButterModal)
 }
 
-export {Modals}
+export {Modals as default}

@@ -115,4 +115,4 @@ let Dropdowns = {
     DropdownColor: translate(['dropdown-color'], {wait: true, withRef: true})(DropdownColor)
 }
 
-export {Dropdowns}
+export {Dropdowns as default}
