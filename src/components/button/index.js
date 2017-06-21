@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 import style from './style.styl';
 
-import Modal from '../modal'
+import Modals from '../modal'
 
 class ActionButton extends Component {
     constructor (props) {
@@ -31,9 +31,9 @@ class ActionButton extends Component {
                 <Button apply={this.toggleModal} icon="open_in_new"
                         loading={state.showModal} {...props}>
                 </Button>
-                <Modal position="center" show={state.showModal} action={{apply: this.hideModal.bind(this)}}>
+                <Modals.ButterModal position="center" show={state.showModal} action={{apply: this.hideModal.bind(this)}}>
                     <ModalComponent {...props}/>
-                </Modal>
+                </Modals.ButterModal>
             </div>
         )
     }
