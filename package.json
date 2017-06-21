@@ -2,13 +2,12 @@
   "name": "butter-base-components",
   "version": "0.1.0",
   "description": "Base Butter Components used by other, more specific component code",
-  "main": "dist/bundle.js",
+  "main": "src/index.js",
   "scripts": {
     "prepublish": "npm run build",
     "build": "webpack --config node_modules/butter-component-builder/webpack.build.js --progress --profile --colors",
     "start": "node node_modules/butter-component-builder/server.js",
-    "lint": "eslint src",
-    "install": "webpack --config ../butter-component-builder/webpack.build.js --progress --profile --colors"
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
