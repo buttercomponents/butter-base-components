@@ -4,6 +4,25 @@ import style from './style.styl';
 
 import Modals from '../modal'
 
+class Button extends Component {
+    constructor (props) {
+        super()
+        this.apply = props.apply || function () {}
+    }
+
+    render() {
+        let {props} = this
+        return (
+            <button className={props.type ? style[props.type] : style.normal} onClick={this.apply.bind(this)}>
+                {props.loading ? <i className="material-icons spin">cached</i> : ''}
+                <span>{props.title}</span>
+                {props.icon ? <i className="material-icons">{props.icon}</i> : ''}
+                {props.children}
+            </button>
+        )
+    }
+}
+
 class ActionButton extends Component {
     constructor (props) {
         super()
@@ -39,31 +58,17 @@ class ActionButton extends Component {
     }
 }
 
-class Button extends Component {
-    constructor (props) {
-        super()
-        this.apply = props.apply || function () {}
-    }
-
-    render() {
+class GoBackButton extends Component {
+    render () {
         let {props} = this
         return (
-            <button className={props.type ? style[props.type] : style.normal} onClick={this.apply.bind(this)}>
-                {props.loading ? <i className="material-icons spin">cached</i> : ''}
-                <span>{props.title}</span>
-                {props.icon ? <i className="material-icons">{props.icon}</i> : ''}
-                {props.children}
-            </button>
+            <a className={style['go-back']} onClick={props.action}>
+                <i className="material-icons">arrow_back</i>
+                <span>{props.t(props.title)}</span>
+            </a>
         )
     }
 }
-
-let GoBackButton = (props) => (
-    <a className={style['go-back']} onClick={props.action}>
-        <i className="material-icons">arrow_back</i>
-        <span>{props.t(props.title)}</span>
-    </a>
-)
 
 let Buttons = {
     Button: translate(['button'], {wait: true, withRef: true})(Button),
