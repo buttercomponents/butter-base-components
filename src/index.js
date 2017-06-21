@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-import { translate } from 'react-i18next';
-import style from './styl/style.styl';
-import ActionBar from './components/action-bar';
 
-let CloseButton = (props) => (props)
+import ActionBar    from './components/action-bar'
+import Alert        from './components/alert'
+import Buttons      from './components/button'
+import Dropdowns    from './components/dropdown'
+import Switch       from './components/switch'
 
-export default class MovieDetails extends Component {
-    render() {
-        let {state, props} = this;
-        return (
-            <div className={style.layout}>
-                    <ActionBar />
-            </div>
-        );
-    }
-}
+export {ActionBar, Alert, Buttons, Dropdowns, Switch}

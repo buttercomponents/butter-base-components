@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 import style from './style.styl';
 
-export default ({...props}) => (
+let ActionBar = ({...props}) => (
     <div id="action-bar" className={style['action-bar']}>
         <div className={style['buttons']}>
             <li>
@@ -14,3 +14,5 @@ export default ({...props}) => (
         </div>
     </div>
 )
+
+export default translate(['action-bar'], {wait: true, withRef: true})(ActionBar);
