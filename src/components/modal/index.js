@@ -28,7 +28,9 @@ class ButterModal extends Component {
     }
 }
 
-export {
-    translate(['modal'], {wait: true, withRef: true})(Modal),
-    translate(['butter-modal'], {wait: true, withRef: true})(ButterModal)
+let Modals = {
+    Modal: translate(['modal'], {wait: true, withRef: true})(Modal),
+    ButterModal: translate(['butter-modal'], {wait: true, withRef: true})(ButterModal)
 }
+
+export {Modals}

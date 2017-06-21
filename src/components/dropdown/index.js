@@ -110,7 +110,9 @@ let DropdownColor =  (props) => (
     </Dropdown>
 )
 
-export {
-    translate(['dropdown'], {wait: true, withRef: true})(Dropdown),
-    translate(['dropdown-color'], {wait: true, withRef: true})(DropdownColor)
+let Dropdowns = {
+    Dropdown: translate(['dropdown'], {wait: true, withRef: true})(Dropdown),
+    DropdownColor: translate(['dropdown-color'], {wait: true, withRef: true})(DropdownColor)
 }
+
+export {Dropdowns}

@@ -65,8 +65,10 @@ let GoBackButton = (props) => (
     </a>
 )
 
-export {
-    translate(['button'], {wait: true, withRef: true})(Button),
-    translate(['action-button'], {wait: true, withRef: true})(ActionButton)
-    translate(['go-back-button'], {wait: true, withRef: true})(GoBackButton)
+let Buttons = {
+    Button: translate(['button'], {wait: true, withRef: true})(Button),
+    ActionButton: translate(['action-button'], {wait: true, withRef: true})(ActionButton),
+    GoBackButton: translate(['go-back-button'], {wait: true, withRef: true})(GoBackButton)
 }
+
+export {Buttons}
