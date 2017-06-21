@@ -3,20 +3,14 @@ import { translate } from 'react-i18next';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import style from './style.styl';
 
-class Modal extends Component {
-    render () {
-        let {props} = this
-        let {position, action, children} = props
-        return (
-            <div className={style.modal} data-position={position} key={0}>
-                <div className={style.widget}>
-                    {children}
-                </div>
-                <div className={style.overlay} onClick={action.apply}></div>
-            </div>
-        )
-    }
-}
+let Modal = ({position, action, children}) => (
+    <div className={style.modal} data-position={position} key={0}>
+        <div className={style.widget}>
+            {children}
+        </div>
+        <div className={style.overlay} onClick={action.apply}></div>
+    </div>
+)
 
 class ButterModal extends Component {
     render () {
@@ -34,9 +28,4 @@ class ButterModal extends Component {
     }
 }
 
-let Modals = {
-    Modal: translate(['modal'], {wait: true, withRef: true})(Modal),
-    ButterModal: translate(['butter-modal'], {wait: true, withRef: true})(ButterModal)
-}
-
-export {Modals as default}
+export default translate(['modal'], {wait: true, withRef: true})(ButterModal);
