@@ -39,7 +39,7 @@
     "butter-component-builder": "buttercomponents/butter-component-builder"
   },
   "dependencies": {
-    "react-i18next": "^3.1.0",
+    "react-i18next": "^4.1.2",
     "react-transition-group": "^1.1.2"
   }
 }
