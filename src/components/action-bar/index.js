@@ -3,16 +3,15 @@ import { translate } from 'react-i18next';
 import style from './style.styl';
 
 
-let button = ({t, action, ...props}) => (
+let button = (props) => (
     <li>
-        <i data-toggle="tooltip" data-placement="left" title={t(title)} className="material-icons">{icon}</i>
+        <i data-toggle="tooltip" data-placement="left" title={props.title} className="material-icons">{props.icon}</i>
     </li>
 )
 
 let ActionBar = ({...props}) => (
     <div id="action-bar" className={style['action-bar']}>
         <div className={style['buttons']}>
-            {"..."}
         </div>
     </div>
 )
