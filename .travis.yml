@@ -4,5 +4,5 @@ node_js:
   - "4"
 notifications:
   email: false
-script:
-- npm test
+install: true
+script: npm test
