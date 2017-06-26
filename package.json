@@ -2,7 +2,7 @@
   "name": "butter-base-components",
   "version": "0.1.0",
   "description": "Base Butter Components used by other, more specific component code",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "prepublish": "npm run build",
     "build": "webpack --config node_modules/butter-component-builder/webpack.build.js --progress --profile --colors",

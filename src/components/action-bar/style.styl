@@ -1,14 +1,20 @@
 .action-bar
     color: #FFF
-    display: flex
-    align-items: center
-    justify-content: space-between
-
     .buttons
-        li
+        .button
             display: inline-block
-            padding: 10px
+            vertical-align: middle
+            margin: 10px
             cursor: pointer
+            transition: opacity 0.3s ease
+            opacity: 0.75
+            &.active
+            &:hover
+                opacity: 1
             i
-                font-size 25px
-                height: 25px!important
+                display: block
+                font-size 24px
+                width: 24px
+                padding: 0
+                margin: 0
+                height: 24px
