@@ -8,8 +8,8 @@ let opts_1 = {
         search: true,
         buttons: [
             {title: "button-01", icon:"shuffle"},
-            {title: "button-02", icon:"visibility"},
-            {title: "button-03", icon:"favorite",  active: true, update: true},
+            {title: "button-02", icon:"visibility", toogle: true},
+            {title: "button-03", icon:"favorite",  active: true, update: true, toogle: true},
             {title: "button-05", icon:"settings"}
         ]
     }
@@ -22,7 +22,7 @@ let opts_2 = {
             {title: "button-03", icon:"keyboard"},
             {title: "button-04", icon:"info_outline"},
             {title: "button-04", icon:"update", update: true},
-            {title: "button-05", icon:"filter_list", active: true}
+            {title: "button-05", icon:"filter_list", active: true, toogle: true}
         ]
     }
 }

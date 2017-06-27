@@ -10,7 +10,7 @@ class Button extends Component {
         this.apply = props.apply || function () {}
     }
 
-    render() {
+    render () {
         let {props} = this
         return (
             <button className={props.type ? style[props.type] : style.normal} onClick={this.apply.bind(this)}>
