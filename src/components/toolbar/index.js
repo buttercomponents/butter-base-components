@@ -14,15 +14,19 @@ class Button extends Component {
         }
     }
 
+    onUpdate() {
+        this.setState((prev) => ({update: true}));
+    }
+
     onClick() {
         let {props, state} = this
-        props.toogle && this.setState({active: !!!state.active});
+        props.toogle && this.setState((prev) => ({active: !!!prev.active}));
         props.action.bind(this)
     }
 
     render () {
         let {props, state} = this
-        let classList = Styles([style.button, state.active && style.active, props.update && style.update])
+        let classList = Styles([style.button, state.active && style.active, state.update && style.update])
 
         return (
             <div className={classList} onClick={this.onClick.bind(this)}>
