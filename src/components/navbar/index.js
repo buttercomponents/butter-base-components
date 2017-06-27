@@ -3,10 +3,10 @@ import { translate } from 'react-i18next';
 import Toolbar from '../toolbar';
 import style from './style.styl';
 
-let MenuBar = ({...props}) => (
-    <div id="menu-bar" className={style.menu}>
+let Navbar = ({...props}) => (
+    <nav id="navbar" className={style.navbar}>
         { props.toolbar && ( <Toolbar {...props.toolbar}/> ) }
-    </div>
+    </nav>
 )
 
-export default translate(['menu-bar'], {wait: true, withRef: true})(MenuBar);
+export default translate(['navbar'], {wait: true, withRef: true})(Navbar);
