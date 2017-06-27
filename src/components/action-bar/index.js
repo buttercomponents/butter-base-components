@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
-import style from './style.styl';
 import Search from '../search'
+import style from './style.styl';
 
 const Styles = (a) => a.filter(b => !!b).join(' ');
 
+//Action-bar button
 let Button = ({...props}) => (
     <div className={Styles([style.button, props.active && style.active, props.update && style.update])} onClick={props.action}>
         <i className="material-icons">{props.icon}</i>
