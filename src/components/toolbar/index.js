@@ -5,15 +5,15 @@ import style from './style.styl';
 
 const Styles = (a) => a.filter(b => !!b).join(' ');
 
-//Action-bar button
+//Tool-bar button
 let Button = ({...props}) => (
     <div className={Styles([style.button, props.active && style.active, props.update && style.update])} onClick={props.action}>
         <i className="material-icons">{props.icon}</i>
     </div>
 )
 
-let ActionBar = ({...props}) => (
-    <div id="action-bar" className={style['action-bar']}>
+let Toolbar = ({...props}) => (
+    <div id="toolbar" className={style.toolbar}>
         { props.search && <Search /> }
         <div className={style['buttons']}>
             {props.buttons.map((i, k) => <Button key={k} {...i}/> )}
@@ -21,4 +21,4 @@ let ActionBar = ({...props}) => (
     </div>
 )
 
-export default translate(['action-bar'], {wait: true, withRef: true})(ActionBar);
+export default translate(['toolbar'], {wait: true, withRef: true})(Toolbar);

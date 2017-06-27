@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
-import ActionBar from '../action-bar';
+import Toolbar from '../toolbar';
 import style from './style.styl';
 
 let MenuBar = ({...props}) => (
     <div id="menu-bar" className={style.menu}>
-        { props.actionBar && ( <ActionBar {...props.actionBar}/> ) }
+        { props.toolbar && ( <Toolbar {...props.toolbar}/> ) }
     </div>
 )
 
