@@ -8,10 +8,9 @@ let opts_1 = {
         search: true,
         buttons: [
             {title: "button-01", icon:"shuffle"},
-            {title: "button-02", icon:"visibility"},
+            {title: "button-02", icon:"visibility", active: true},
             {title: "button-03", icon:"favorite", update: true},
-            {title: "button-04", icon:"update", update: true},
-            {title: "button-05", icon:"settings",  active: true, update: true}
+            {title: "button-05", icon:"settings"}
         ]
     }
 }
@@ -20,24 +19,23 @@ let opts_2 = {
     toolbar: {
         search: false,
         buttons: [
-            {title: "button-01", icon:"shuffle"},
-            {title: "button-02", icon:"visibility"},
-            {title: "button-03", icon:"favorite", update: true},
+            {title: "button-03", icon:"keyboard"},
+            {title: "button-04", icon:"info_outline"},
             {title: "button-04", icon:"update", update: true},
-            {title: "button-05", icon:"settings",  active: true, update: true}
+            {title: "button-05", icon:"filter_list", active: true}
         ]
     }
 }
 
+let Title = ({...props}) => (
+    <h1>{props.name} {"#" + props.number}</h1>
+)
+
 let Test = ({test, t}) => (
     <div className={style.layout}>
-        <br/>
-        <h1>Navbar test #1</h1>
-        <br/>
+        <Title name="Navbar test" number="1"/>
         <Navbar {...opts_1}/>
-        <br/>
-        <h1>Navbar test #2</h1>
-        <br/>
+        <Title name="Navbar test" number="2"/>
         <Navbar {...opts_2}/>
     </div>
 )
