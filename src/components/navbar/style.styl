@@ -9,7 +9,24 @@
     z-index: 10
     display: flex
     align-items: center
-    justify-content: end
+    justify-content: space-between
 
-    & *
-        vertical-align: middle
+    .menu
+        display: flex
+        align-items: center
+        justify-content: center
+
+        .title, .button
+            font-size: 22px
+            margin: 10px
+            opacity: 0.75
+
+        .title
+            font-weight: bold
+            text-transform: uppercase
+
+        .button
+            cursor: pointer
+
+            &:hover
+                opacity: 1

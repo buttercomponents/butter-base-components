@@ -12,6 +12,8 @@ export default {
             }
         },
         {
+            title: "Settings",
+            goBack: true,
             toolbar: {
                 search: false,
                 buttons: [
@@ -23,6 +25,8 @@ export default {
             }
         },
         {
+            title: "Fight Club (1999)",
+            goBack: true,
             toolbar: {
                 search: false,
                 buttons: [

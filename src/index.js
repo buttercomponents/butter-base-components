@@ -5,8 +5,7 @@ import style from './style.styl';
 
 let Test = ({...props, t}) => (
     <div className={style.layout}>
-         { console.log(props)}
-        { props.Navbars.map( i => <div><br/><Navbar {...i}/><br/></div> )}
+        {props.Navbars.map((i, k) => <div><Navbar key={k} {...i}/><br/><br/></div>)}
     </div>
 )
 
