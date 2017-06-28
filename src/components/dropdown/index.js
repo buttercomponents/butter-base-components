@@ -3,7 +3,6 @@ import { translate } from 'react-i18next';
 import style from './style.styl';
 
 //Dropdown Item component
-
 let DropdownItem = (props) => (
     <li className={style.action} onClick={props.onSelect}>
         {props.value}

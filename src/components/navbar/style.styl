@@ -1,0 +1,32 @@
+.navbar
+    background-color: var(--Navbar-bg)
+    box-shadow: var(--Navbar-shadow)
+    height: (--Navbar-height)
+    line-height: (--Navbar-height)
+    padding: 0 10px
+    user-select: none
+    width: auto
+    z-index: 10
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    .menu
+        display: flex
+        align-items: center
+        justify-content: center
+
+        .title, .button
+            font-size: 22px
+            margin: 10px
+            opacity: 0.75
+
+        .title
+            font-weight: bold
+            text-transform: uppercase
+
+        .button
+            cursor: pointer
+
+            &:hover
+                opacity: 1

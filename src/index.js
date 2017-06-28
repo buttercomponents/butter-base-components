@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {translate} from 'react-i18next';
+import Navbar from './components/navbar';
+import style from './style.styl';
 
-import ActionBar    from './components/action-bar'
-import Alert        from './components/alert'
-import Buttons      from './components/button'
-import Dropdowns    from './components/dropdown'
-import Switch       from './components/switch'
-import Modal        from './components/modal'
+let Test = ({...props, t}) => (
+    <div className={style.layout}>
+        {props.Navbars.map((i, k) => <div><Navbar key={k} {...i}/><br/><br/></div>)}
+    </div>
+)
 
-export {ActionBar, Alert, Buttons, Dropdowns, Modal, Switch}
+export default translate('test')(Test)
