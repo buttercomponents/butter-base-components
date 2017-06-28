@@ -16,7 +16,7 @@ class Navbar extends Component {
         return (
             <nav id="navbar" className={style.navbar}>
                 <div className={style.menu}>
-                    {props.goBack && <GoBackButton/>}
+                    {props.goBack && <GoBackButton action={props.goBack}/>}
                     <h1 className={style.title}>{props.title}</h1>
                 </div>
                 {props.toolbar && (<Toolbar {...props.toolbar}/>)}

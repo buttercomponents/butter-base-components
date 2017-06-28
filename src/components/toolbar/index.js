@@ -21,7 +21,7 @@ class Button extends Component {
     onClick() {
         let {props, state} = this
         props.toogle && this.setState((prev) => ({active: !!!prev.active}));
-        props.action.bind(this)
+        props.action.bind(this)()
     }
 
     render () {
