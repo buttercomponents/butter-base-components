@@ -12,6 +12,7 @@ class Button extends Component {
             active: props.active || false,
             update: props.update || false
         }
+        this.action = props.action.bind(this)
     }
 
     onUpdate() {
@@ -21,7 +22,7 @@ class Button extends Component {
     onClick() {
         let {props, state} = this
         props.toogle && this.setState((prev) => ({active: !!!prev.active}));
-        props.action.bind(this)()
+        this.action()
     }
 
     render () {
