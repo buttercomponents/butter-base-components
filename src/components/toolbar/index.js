@@ -31,7 +31,7 @@ class Button extends Component {
         let classList = Styles([style.button, state.active && style.active, state.update && style.update])
 
         return (
-            <div className={classList} onClick={this.onClick.bind(this)}>
+            <div className={classList} onClick={this.onClick.bind(this)} title={props.title}>
                 <i className="material-icons">{props.icon}</i>
             </div>
         )
