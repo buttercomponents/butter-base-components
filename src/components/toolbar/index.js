@@ -6,11 +6,12 @@ import style from './style.styl';
 const Styles = (a) => a.filter(b => !!b).join(' ');
 
 class Button extends Component {
+
     constructor (props) {
         super()
         this.state = {
-            active: props.active || false,
-            update: props.update || false
+            active: props.active,
+            update: props.update
         }
         this.action = props.action.bind(this)
     }
@@ -35,6 +36,13 @@ class Button extends Component {
             </div>
         )
     }
+
+    static defaultProps = {
+        action: () => {},
+        active: false,
+        toogle: false,
+        update: false
+    };
 }
 
 let Toolbar = ({...props}) => (

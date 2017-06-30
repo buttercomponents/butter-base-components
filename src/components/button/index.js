@@ -58,22 +58,9 @@ class ActionButton extends Component {
     }
 }
 
-class GoBackButton extends Component {
-    render () {
-        let {props} = this
-        return (
-            <a className={style['go-back']} onClick={props.action}>
-                <i className="material-icons">arrow_back</i>
-                <span>{props.t(props.title)}</span>
-            </a>
-        )
-    }
-}
-
 let Buttons = {
     Button: translate(['button'], {wait: true, withRef: true})(Button),
-    ActionButton: translate(['action-button'], {wait: true, withRef: true})(ActionButton),
-    GoBackButton: translate(['go-back-button'], {wait: true, withRef: true})(GoBackButton)
+    ActionButton: translate(['action-button'], {wait: true, withRef: true})(ActionButton)
 }
 
 export {Buttons as default}
