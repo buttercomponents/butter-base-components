@@ -2,27 +2,22 @@ export default {
     Buttons: [
         {
             type:"normal",
-            title:"Normal",
+            title:"Normal button",
             action: () => {}
         },
         {
             type:"secondary",
-            title:"Secondary #1",
+            title:"Secondary button",
             action: () => {}
         },
         {
             type:"secondary",
-            title:"Secondary #2",
-            action: () => {}
-        },
-        {
-            type:"secondary",
-            title:"Secondary #3",
+            title:"Small",
             action: () => {}
         },
         {
             type:"minimal",
-            title:"Minimal",
+            title:"Minimalist",
             action: () => {}
         },
     ],
@@ -92,5 +87,12 @@ export default {
                 ]
             }
         }
+    ],
+    Switches: [
+        { selected: true },
+        { selected: false },
+        { selected: true },
+        { selected: false },
+        { selected: true }
     ]
 }
