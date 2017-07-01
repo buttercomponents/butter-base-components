@@ -3,16 +3,22 @@ import { translate } from 'react-i18next';
 import style from './style.styl';
 
 class Switch extends Component {
+
+    static defaultProps = {
+        selected: false,
+        apply: () => {}
+    }
+
     constructor (props) {
         super()
         this.state = {
-            selected: props.selected || false
+            selected: props.selected
         }
-        this.apply = props.apply || function () {}
+        this.apply = props.apply
     }
 
     onChange () {
-        this.setState({selected: !this.state.selected})
+        this.setState(prev => ({selected: !this.state.selected}))
         this.apply(this.state.selected)
     }
 

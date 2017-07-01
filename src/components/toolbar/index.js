@@ -24,12 +24,12 @@ class Button extends Component {
     }
 
     onUpdate() {
-        this.setState((prev) => ({update: true}));
+        this.setState({update: true});
     }
 
     onClick() {
         let {props, state} = this
-        props.toogle && this.setState((prev) => ({active: !!!prev.active}));
+        props.toogle && this.setState(prevState => ({active: !!!prevState.active}));
         this.action()
     }
 
