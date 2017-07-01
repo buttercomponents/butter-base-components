@@ -34,17 +34,27 @@ const DropdownToggle = (props) => (
 )
 
 class Dropdown extends Component {
+
+    static defaultProps = {
+        apply: () => {},
+        config : {
+            type: "text",
+            item: DropdownItem,
+            label: LabelItem
+        }
+    }
+
     constructor (props) {
         super()
         this.state = {
             open: false,
             selected: props.selected || Object.keys(props.options)[0]
         }
-        this.apply = props.apply || function () {}
+        this.apply = props.apply
     }
 
     toggle() {
-        this.setState({open: !!!this.state.open})
+        this.setState(prevState => ({open: !!!prevState.open}))
     }
 
     close() {
@@ -86,14 +96,6 @@ class Dropdown extends Component {
                 </div>
             </div>
         )
-    }
-}
-
-Dropdown.defaultProps = {
-    config : {
-        type: "text",
-        item: DropdownItem,
-        label: LabelItem
     }
 }
 

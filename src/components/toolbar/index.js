@@ -7,6 +7,13 @@ const Styles = (a) => a.filter(b => !!b).join(' ');
 
 class Button extends Component {
 
+    static defaultProps = {
+        action: () => {},
+        active: false,
+        toogle: false,
+        update: false
+    }
+
     constructor (props) {
         super()
         this.state = {
@@ -36,13 +43,6 @@ class Button extends Component {
             </div>
         )
     }
-
-    static defaultProps = {
-        action: () => {},
-        active: false,
-        toogle: false,
-        update: false
-    };
 }
 
 let Toolbar = ({...props}) => (

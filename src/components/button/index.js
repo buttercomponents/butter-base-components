@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
+import Modal from '../modal'
 import style from './style.styl';
 
-import Modal from '../modal'
-
 class Button extends Component {
+
+    static defaultProps = {
+        type: 'normal',
+        icon: false,
+        loading: false,
+        apply: () => {}
+    }
+
     constructor (props) {
         super()
-        this.apply = props.apply || function () {}
+        this.apply = props.apply
     }
 
     render () {
         let {props} = this
         return (
-            <button className={props.type ? style[props.type] : style.normal} onClick={this.apply.bind(this)}>
-                {props.loading ? <i className="material-icons spin">cached</i> : ''}
+            <button className={style[props.type]} onClick={this.apply.bind(this)}>
+                {props.loading && <i className="material-icons spin">cached</i>}
                 <span>{props.title}</span>
-                {props.icon ? <i className="material-icons">{props.icon}</i> : ''}
+                {props.icon && <i className="material-icons">{props.icon}</i>}
                 {props.children}
             </button>
         )
@@ -24,6 +31,7 @@ class Button extends Component {
 }
 
 class ActionButton extends Component {
+
     constructor (props) {
         super()
         this.state = {
@@ -33,7 +41,7 @@ class ActionButton extends Component {
     }
 
     toggleModal() {
-        this.setState({showModal: !!!this.state.showModal})
+        this.setState(prevState => ({showModal: !!!prevState.showModal}))
     }
 
     hideModal() {
