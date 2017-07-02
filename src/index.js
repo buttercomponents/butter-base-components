@@ -9,7 +9,13 @@ import style from './style.styl';
 let Test = ({...props, t}) => (
     <div className={style.layout}>
 
-        {props.Navbars.map((i, k) => <div key={k} className={style.test}><Navbar  {...i}/></div>)}
+        {
+            props.Navbars.map((i, k) =>
+                <div key={k} className={style.test}>
+                    <Navbar {...i}/>
+                </div>
+            )
+        }
 
         <div className={style.test}>
             {props.Buttons.map((i, k) => <Buttons.Button key={k} {...i}/>)}
@@ -24,7 +30,6 @@ let Test = ({...props, t}) => (
         </div>
 
     </div>
-
 )
 
 export default translate('test')(Test)
