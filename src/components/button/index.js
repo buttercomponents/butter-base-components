@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import Modal from '../modal'
 import style from './style.styl';
@@ -7,9 +8,16 @@ class Button extends Component {
 
     static defaultProps = {
         type: 'normal',
-        icon: false,
         loading: false,
         apply: () => {}
+    }
+
+    static propTypes = {
+        type: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        icon: PropTypes.string,
+        loading: PropTypes.bool,
+        apply: PropTypes.func
     }
 
     constructor (props) {
@@ -22,7 +30,7 @@ class Button extends Component {
         return (
             <button className={style[props.type]} onClick={this.apply.bind(this)}>
                 {props.loading && <i className="material-icons spin">cached</i>}
-                <span>{props.title}</span>
+                {props.title && <span>{props.title}</span>}
                 {props.icon && <i className="material-icons">{props.icon}</i>}
                 {props.children}
             </button>

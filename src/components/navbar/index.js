@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import Toolbar from '../toolbar';
 import style from './style.styl';
@@ -10,16 +11,26 @@ let GoBackButton = ({...props}) => (
 )
 
 class Navbar extends Component {
+
+    static defaultProps = {
+        toolbar: {}
+    }
+
+    static propTypes = {
+        title: PropTypes.string,
+        goBack: PropTypes.func,
+        toolbar: PropTypes.object
+    }
+
     render() {
         let {props} = this
-
         return (
             <nav id="navbar" className={style.navbar}>
                 <div className={style.menu}>
                     {props.goBack && <GoBackButton action={props.goBack}/>}
-                    <h1 className={style.title}>{props.title}</h1>
+                    {props.title && <h1 className={style.title}>{props.title}</h1>}
                 </div>
-                {props.toolbar && (<Toolbar {...props.toolbar}/>)}
+                {<Toolbar {...props.toolbar}/>}
             </nav>
         )
     }

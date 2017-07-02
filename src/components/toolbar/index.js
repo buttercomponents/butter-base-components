@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
+
 import Search from '../search'
 import style from './style.styl';
 
@@ -12,6 +14,13 @@ class Button extends Component {
         active: false,
         toogle: false,
         update: false
+    }
+
+    static propTypes = {
+        action: PropTypes.func,
+        active: PropTypes.bool,
+        toogle: PropTypes.bool,
+        update: PropTypes.bool
     }
 
     constructor (props) {
@@ -45,13 +54,29 @@ class Button extends Component {
     }
 }
 
-let Toolbar = ({...props}) => (
-    <div id="toolbar" className={style.toolbar}>
-        { props.search && <Search /> }
-        <div className={style['buttons']}>
-            {props.buttons.map((i, k) => <Button key={k} {...i}/>)}
-        </div>
-    </div>
-)
+class Toolbar extends Component {
+
+    static defaultProps: {
+        search: false,
+        buttons: []
+    }
+
+    static propTypes = {
+        search: PropTypes.bool,
+        buttons: PropTypes.array
+    }
+
+    render() {
+        let {props} = this
+        return (
+            <div id="toolbar" className={style.toolbar}>
+                { props.search && <Search /> }
+                <div className={style['buttons']}>
+                    {props.buttons.map((i, k) => <Button key={k} {...i}/>)}
+                </div>
+            </div>
+        )
+    }
+}
 
 export default translate(['toolbar'], {wait: true, withRef: true})(Toolbar);

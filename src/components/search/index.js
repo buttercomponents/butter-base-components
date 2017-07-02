@@ -7,7 +7,6 @@ class Search extends Component {
     constructor (props) {
         super()
         this.state = {}
-        this.apply = props.apply || function () {}
     }
 
     render () {

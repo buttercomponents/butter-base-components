@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import style from './style.styl';
 
@@ -7,6 +8,11 @@ class Switch extends Component {
     static defaultProps = {
         selected: false,
         apply: () => {}
+    }
+
+    static propTypes = {
+        selected: PropTypes.bool,
+        apply: PropTypes.func
     }
 
     constructor (props) {

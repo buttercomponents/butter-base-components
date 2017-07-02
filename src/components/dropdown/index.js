@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import style from './style.styl';
 
@@ -42,6 +43,15 @@ class Dropdown extends Component {
             item: DropdownItem,
             label: LabelItem
         }
+    }
+
+    static propTypes = {
+        apply: PropTypes.func,
+        config: PropTypes.shape({
+            type: PropTypes.string.isRequired,
+            item: PropTypes.oneOfType([ PropTypes.element,  PropTypes.func]).isRequired,
+            label: PropTypes.oneOfType([ PropTypes.element,  PropTypes.func]).isRequired
+        })
     }
 
     constructor (props) {
