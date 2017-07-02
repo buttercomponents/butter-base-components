@@ -1,4 +1,54 @@
 export default {
+    Buttons: [
+        {
+            type:"normal",
+            title:"Normal button",
+            action: () => {}
+        },
+        {
+            type:"secondary",
+            title:"Secondary button",
+            action: () => {}
+        },
+        {
+            type:"secondary",
+            title:"Small",
+            action: () => {}
+        },
+        {
+            type:"minimal",
+            title:"Minimalist",
+            action: () => {}
+        },
+    ],
+    Dropdowns: [
+        {
+            options: [
+                "0",
+                "1",
+                "2",
+                "3"
+            ]
+        },
+        {
+            options: [
+                "Item 1",
+                "Item 2",
+                "Item 3",
+                "Item 4"
+            ]
+        },
+        {
+            options: [
+                "Ant",
+                "Bird",
+                "Cat",
+                "Dog",
+                "Elephant",
+                "Fox"
+            ]
+        }
+    ],
     Navbars: [
         {
             toolbar: {
@@ -13,7 +63,7 @@ export default {
         },
         {
             title: "Settings",
-            goBack: true,
+            goBack: () => {},
             toolbar: {
                 search: false,
                 buttons: [
@@ -26,7 +76,7 @@ export default {
         },
         {
             title: "Fight Club (1999)",
-            goBack: true,
+            goBack: () => {},
             toolbar: {
                 search: false,
                 buttons: [
@@ -37,5 +87,12 @@ export default {
                 ]
             }
         }
+    ],
+    Switches: [
+        { selected: true },
+        { selected: false },
+        { selected: true },
+        { selected: false },
+        { selected: true }
     ]
 }

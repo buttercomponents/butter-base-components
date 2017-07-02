@@ -22,7 +22,7 @@ class ButterModal extends Component {
                 transitionAppearTimeout={200}
                 transitionEnterTimeout={200}
                 transitionLeaveTimeout={200}>
-                {show?<Modal {...props}/>:null}
+                {show && <Modal {...props}/>}
             </CSSTransitionGroup>
         )
     }

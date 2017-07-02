@@ -40,6 +40,7 @@
     "butter-component-builder": "buttercomponents/butter-component-builder"
   },
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react-i18next": "^3.1.0",
     "react-transition-group": "^1.1.2"
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import style from './style.styl';
 
@@ -34,17 +35,36 @@ const DropdownToggle = (props) => (
 )
 
 class Dropdown extends Component {
+
+    static defaultProps = {
+        apply: () => {},
+        config : {
+            type: "text",
+            item: DropdownItem,
+            label: LabelItem
+        }
+    }
+
+    static propTypes = {
+        apply: PropTypes.func,
+        config: PropTypes.shape({
+            type: PropTypes.string.isRequired,
+            item: PropTypes.oneOfType([ PropTypes.element,  PropTypes.func]).isRequired,
+            label: PropTypes.oneOfType([ PropTypes.element,  PropTypes.func]).isRequired
+        })
+    }
+
     constructor (props) {
         super()
         this.state = {
             open: false,
             selected: props.selected || Object.keys(props.options)[0]
         }
-        this.apply = props.apply || function () {}
+        this.apply = props.apply.bind(this)
     }
 
     toggle() {
-        this.setState({open: !!!this.state.open})
+        this.setState(prevState => ({open: !!!prevState.open}))
     }
 
     close() {
@@ -86,14 +106,6 @@ class Dropdown extends Component {
                 </div>
             </div>
         )
-    }
-}
-
-Dropdown.defaultProps = {
-    config : {
-        type: "text",
-        item: DropdownItem,
-        label: LabelItem
     }
 }
 

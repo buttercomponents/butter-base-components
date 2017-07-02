@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
+import Modal from '../modal'
 import style from './style.styl';
 
-import Modal from '../modal'
-
 class Button extends Component {
+
+    static defaultProps = {
+        type: 'normal',
+        loading: false,
+        apply: () => {}
+    }
+
+    static propTypes = {
+        type: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        icon: PropTypes.string,
+        loading: PropTypes.bool,
+        apply: PropTypes.func
+    }
+
     constructor (props) {
         super()
-        this.apply = props.apply || function () {}
+        this.apply = props.apply.bind(this)
     }
 
     render () {
         let {props} = this
         return (
-            <button className={props.type ? style[props.type] : style.normal} onClick={this.apply.bind(this)}>
-                {props.loading ? <i className="material-icons spin">cached</i> : ''}
-                <span>{props.title}</span>
-                {props.icon ? <i className="material-icons">{props.icon}</i> : ''}
+            <button className={style[props.type]} onClick={this.apply.bind(this)}>
+                {props.loading && <i className="material-icons spin">cached</i>}
+                {props.title && <span>{props.title}</span>}
+                {props.icon && <i className="material-icons">{props.icon}</i>}
                 {props.children}
             </button>
         )
@@ -24,6 +39,7 @@ class Button extends Component {
 }
 
 class ActionButton extends Component {
+
     constructor (props) {
         super()
         this.state = {
@@ -33,7 +49,7 @@ class ActionButton extends Component {
     }
 
     toggleModal() {
-        this.setState({showModal: !!!this.state.showModal})
+        this.setState(prevState => ({showModal: !!!prevState.showModal}))
     }
 
     hideModal() {
@@ -58,22 +74,9 @@ class ActionButton extends Component {
     }
 }
 
-class GoBackButton extends Component {
-    render () {
-        let {props} = this
-        return (
-            <a className={style['go-back']} onClick={props.action}>
-                <i className="material-icons">arrow_back</i>
-                <span>{props.t(props.title)}</span>
-            </a>
-        )
-    }
-}
-
 let Buttons = {
     Button: translate(['button'], {wait: true, withRef: true})(Button),
-    ActionButton: translate(['action-button'], {wait: true, withRef: true})(ActionButton),
-    GoBackButton: translate(['go-back-button'], {wait: true, withRef: true})(GoBackButton)
+    ActionButton: translate(['action-button'], {wait: true, withRef: true})(ActionButton)
 }
 
 export {Buttons as default}

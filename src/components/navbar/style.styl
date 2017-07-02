@@ -1,15 +1,15 @@
 .navbar
+    align-items: center
     background-color: var(--Navbar-bg)
     box-shadow: var(--Navbar-shadow)
-    height: (--Navbar-height)
-    line-height: (--Navbar-height)
-    padding: 0 10px
-    user-select: none
-    width: auto
-    z-index: 10
     display: flex
-    align-items: center
+    height: (--Navbar-height)
     justify-content: space-between
+    line-height: (--Navbar-height)
+    margin-top: var(--Window-handler-height)
+    user-select: none
+    width: 100%
+    z-index: 10
 
     .menu
         display: flex
@@ -19,14 +19,15 @@
         .title, .button
             font-size: 22px
             margin: 10px
-            opacity: 0.75
 
         .title
             font-weight: bold
             text-transform: uppercase
 
         .button
+            opacity: 0.75
             cursor: pointer
+            transition: opacity 0.25s
 
             &:hover
                 opacity: 1
