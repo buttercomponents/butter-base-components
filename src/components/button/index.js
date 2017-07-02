@@ -14,7 +14,7 @@ class Button extends Component {
 
     constructor (props) {
         super()
-        this.apply = props.apply
+        this.apply = props.apply.bind(this)
     }
 
     render () {

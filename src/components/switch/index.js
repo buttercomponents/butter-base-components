@@ -14,7 +14,7 @@ class Switch extends Component {
         this.state = {
             selected: props.selected
         }
-        this.apply = props.apply
+        this.apply = props.apply.bind(this)
     }
 
     onChange () {

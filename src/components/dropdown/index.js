@@ -50,7 +50,7 @@ class Dropdown extends Component {
             open: false,
             selected: props.selected || Object.keys(props.options)[0]
         }
-        this.apply = props.apply
+        this.apply = props.apply.bind(this)
     }
 
     toggle() {
