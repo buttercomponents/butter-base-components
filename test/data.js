@@ -45,7 +45,26 @@ export default {
                 "Cat",
                 "Dog",
                 "Elephant",
-                "Fox"
+                "Fox",
+                "Giraffe",
+                "Hawk",
+                "Iguana",
+                "Jaguar",
+                "Koala",
+                "Lion",
+                "Makaw",
+                "Nyala",
+                "Owl",
+                "Penguin",
+                "Quail",
+                "Rabbit",
+                "Snake",
+                "Turtule",
+                "Urial",
+                "Viper",
+                "Wolf",
+                "Yak",
+                "Zebra"
             ]
         }
     ],
