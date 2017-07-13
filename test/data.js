@@ -1,5 +1,5 @@
 export default {
-    View: {
+    view: {
         titlebar: {
             platform: 'darwin',
             actions: {
@@ -23,7 +23,7 @@ export default {
             }
         }
     },
-    TitleBar: [
+    titleBar: [
       {
           platform: 'darwin',
           actions: {
@@ -60,7 +60,7 @@ export default {
           }
       }
     ],
-    Buttons: [
+    buttons: [
         {
             type:"normal",
             title:"Normal button",
@@ -83,7 +83,7 @@ export default {
             action: () => {}
         },
     ],
-    Dropdowns: {
+    dropdowns: {
         text: [{
             options: [
                 "0",
@@ -162,7 +162,7 @@ export default {
             }
         ]
     },
-    Toolbars: [
+    toolbars: [
         {
             search: true,
             buttons: [
@@ -195,7 +195,7 @@ export default {
             ]
         }
     ],
-    Switches: [
+    switches: [
         { selected: true },
         { selected: false },
         { selected: true },

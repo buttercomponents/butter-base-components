@@ -12,11 +12,11 @@ import style from './style.styl';
 let Test = ({...props, t}) => (
     <div className={style.layout}>
         <div className={style.window}>
-            <TitleBar {...props.View.titlebar}/>
-            <View {...props.View.viewOpts}/>
+            <TitleBar {...props.view.titlebar}/>
+            <View {...props.view.viewOpts}/>
         </div>
         {
-            props.TitleBar.map((i, k) =>
+            props.titleBar.map((i, k) =>
                 <div className={style.test}>
                     <TitleBar key={k} {...i}/>
                 </div>
@@ -24,7 +24,7 @@ let Test = ({...props, t}) => (
         }
 
         {
-            props.Toolbars.map((i, k) =>
+            props.toolbars.map((i, k) =>
                 <div key={k} className={style.test}>
                     <Toolbar {...i}/>
                 </div>
@@ -32,20 +32,20 @@ let Test = ({...props, t}) => (
         }
 
         <div className={style.test}>
-            {props.Buttons.map((i, k) => <Buttons.Button key={k} {...i}/>)}
+            {props.buttons.map((i, k) => <Buttons.Button key={k} {...i}/>)}
         </div>
 
         <div className={style.test}>
-            {props.Dropdowns.text.map((i, k) => <Dropdowns.Dropdown key={k} {...i}/>)}
+            {props.dropdowns.text.map((i, k) => <Dropdowns.Dropdown key={k} {...i}/>)}
         </div>
 
         <div className={style.test}>
-            {props.Dropdowns.color.map((i, k) => <Dropdowns.DropdownColor key={k} {...i}/>)}
+            {props.dropdowns.color.map((i, k) => <Dropdowns.DropdownColor key={k} {...i}/>)}
         </div>
 
 
         <div className={style.test}>
-            {props.Switches.map((i, k) => <Switch key={k} {...i}/>)}
+            {props.switches.map((i, k) => <Switch key={k} {...i}/>)}
         </div>
 
     </div>
