@@ -1,13 +1,22 @@
 import React from 'react';
 import {translate} from 'react-i18next';
+import TitleBar from './components/title-bar';
 import Navbar from './components/navbar';
 import Buttons  from './components/button';
 import Dropdowns  from './components/dropdown';
 import Switch  from './components/switch';
 import style from './style.styl';
 
+
 let Test = ({...props, t}) => (
     <div className={style.layout}>
+        {
+            props.TitleBar.map((i, k) =>
+                <div className={style.test}>
+                    <TitleBar key={k} {...i}/>
+                </div>
+            )
+        }
 
         {
             props.Navbars.map((i, k) =>
@@ -22,8 +31,13 @@ let Test = ({...props, t}) => (
         </div>
 
         <div className={style.test}>
-            {props.Dropdowns.map((i, k) => <Dropdowns.Dropdown key={k} {...i}/>)}
+            {props.Dropdowns.text.map((i, k) => <Dropdowns.Dropdown key={k} {...i}/>)}
         </div>
+
+        <div className={style.test}>
+            {props.Dropdowns.color.map((i, k) => <Dropdowns.DropdownColor key={k} {...i}/>)}
+        </div>
+
 
         <div className={style.test}>
             {props.Switches.map((i, k) => <Switch key={k} {...i}/>)}

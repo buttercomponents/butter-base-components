@@ -1,4 +1,33 @@
 export default {
+    TitleBar: [
+      {
+          platform: 'darwin',
+          actions: {
+              close: () => console.log("Close window..."),
+              max: () => console.log("Maximize window..."),
+              min: () => console.log("Minimize window..."),
+              fullscreen: (active) => {
+                  console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
+              }
+          }
+      },
+      {
+          title: 'Linux-style',
+          platform: 'linux'
+      },
+      {
+          title: 'source_file.mp4',
+          platform: 'win32',
+          actions: {
+              close: () => console.log("Close window..."),
+              max: () => console.log("Maximize window..."),
+              min: () => console.log("Minimize window..."),
+              fullscreen: (active) => {
+                  console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
+              }
+          }
+      }
+    ],
     Buttons: [
         {
             type:"normal",
@@ -12,7 +41,8 @@ export default {
         },
         {
             type:"secondary",
-            title:"Small",
+            title:"Icon",
+            icon: "touch_app",
             action: () => {}
         },
         {
@@ -21,8 +51,8 @@ export default {
             action: () => {}
         },
     ],
-    Dropdowns: [
-        {
+    Dropdowns: {
+        text: [{
             options: [
                 "0",
                 "1",
@@ -66,8 +96,40 @@ export default {
                 "Yak",
                 "Zebra"
             ]
-        }
-    ],
+        }],
+        color: [
+            {
+                options: [
+                    "#555",
+                    "#777",
+                    "#999",
+                    "#BBB",
+                    "#DDD",
+                    "#FFF"
+                ]
+            },
+            {
+                options: [
+                    "#2d72d9",
+                    "#0b6fcb",
+                    "#1689f3",
+                    "#46a1f5",
+                    "#76baf8",
+                    "#a7d2fa"
+                ]
+            },
+            {
+                options: [
+                    "#ff0033",
+                    "#9933ff",
+                    "#0066ff",
+                    "#00cc33",
+                    "#ffcc00",
+                    "#ff9933",
+                ]
+            }
+        ]
+    },
     Navbars: [
         {
             toolbar: {
