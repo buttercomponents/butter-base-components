@@ -1,9 +1,42 @@
 .toolbar
     align-items: center
-    color: #FFF
+    background-color: var(--Navbar-bg)
+    box-shadow: var(--Navbar-shadow)
     display: flex
+    height: (--Navbar-height)
+    justify-content: space-between
+    line-height: (--Navbar-height)
+    margin-top: var(--Window-handler-height)
+    user-select: none
+    width: 100%
+    z-index: 10
 
-    .buttons
+    .menu
+        display: flex
+        align-items: center
+        justify-content: center
+
+        .title, .button
+            font-size: 22px
+            margin: 15px
+
+        .title
+            font-family: var(--Font-title)
+            font-weight: bold
+            text-transform: uppercase
+        .button
+            opacity: 0.75
+            cursor: pointer
+            transition: opacity 0.25s
+
+            &:hover
+                opacity: 1
+
+    .actions
+        align-items: center
+        color: #FFF
+        display: flex
+        
         .button
             border-radius: 3px
             cursor: pointer

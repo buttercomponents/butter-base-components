@@ -13,7 +13,15 @@ export default {
       },
       {
           title: 'Linux-style',
-          platform: 'linux'
+          platform: 'linux',
+          actions: {
+              close: () => console.log("Close window..."),
+              max: () => console.log("Maximize window..."),
+              min: () => console.log("Minimize window..."),
+              fullscreen: (active) => {
+                  console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
+              }
+          }
       },
       {
           title: 'source_file.mp4',
@@ -130,43 +138,37 @@ export default {
             }
         ]
     },
-    Navbars: [
+    Toolbars: [
         {
-            toolbar: {
-                search: true,
-                buttons: [
-                    {title: "button-01", icon:"shuffle"},
-                    {title: "button-02", icon:"visibility", toogle: true},
-                    {title: "button-03", icon:"favorite",  active: true, update: true, toogle: true},
-                    {title: "button-04", icon:"settings"}
-                ]
-            }
+            search: true,
+            buttons: [
+                {title: "button-01", icon:"shuffle"},
+                {title: "button-02", icon:"visibility", toogle: true},
+                {title: "button-03", icon:"favorite",  active: true, update: true, toogle: true},
+                {title: "button-04", icon:"settings"}
+            ]
         },
         {
             title: "Settings",
             goBack: () => {},
-            toolbar: {
-                search: false,
-                buttons: [
-                    {title: "button-01", icon:"keyboard"},
-                    {title: "button-02", icon:"info_outline"},
-                    {title: "button-03", icon:"update", update: true},
-                    {title: "button-04", icon:"filter_list", active: true, toogle: true}
-                ]
-            }
+            search: false,
+            buttons: [
+                {title: "button-01", icon:"keyboard"},
+                {title: "button-02", icon:"info_outline"},
+                {title: "button-03", icon:"update", update: true},
+                {title: "button-04", icon:"filter_list", active: true, toogle: true}
+            ]
         },
         {
             title: "Fight Club (1999)",
             goBack: () => {},
-            toolbar: {
-                search: false,
-                buttons: [
-                    {title: "button-01", icon:"fiber_manual_record"},
-                    {title: "button-02", icon:"link"},
-                    {title: "button-03", icon:"favorite_outline"},
-                    {title: "button-04", icon:"visibility"},
-                ]
-            }
+            search: false,
+            buttons: [
+                {title: "button-01", icon:"fiber_manual_record"},
+                {title: "button-02", icon:"link"},
+                {title: "button-03", icon:"favorite_outline"},
+                {title: "button-04", icon:"visibility"}
+            ]
         }
     ],
     Switches: [
