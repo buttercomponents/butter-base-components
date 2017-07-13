@@ -5,11 +5,16 @@ import Toolbar from './components/toolbar';
 import Buttons  from './components/button';
 import Dropdowns  from './components/dropdown';
 import Switch  from './components/switch';
+import View from './components/view';
 import style from './style.styl';
 
 
 let Test = ({...props, t}) => (
     <div className={style.layout}>
+        <div className={style.window}>
+            <TitleBar {...props.View.titlebar}/>
+            <View {...props.View.viewOpts}/>
+        </div>
         {
             props.TitleBar.map((i, k) =>
                 <div className={style.test}>

@@ -1,16 +1,20 @@
 .titlebar
-    background: var(--Window-handler-bg)
+    background: var(--Navbar-bg)
     color: #FFF
     display: flex
     align-items: center
     justify-content: center
     height: var(--Window-handler-height)
     text-align: center
+    overflow: hidden
     width: 100%
     z-index: 15
-    position: relative
     vertical-align: middle
     -webkit-app-region: drag
+    margin: 0
+    top: 0px
+    position: absolute
+    top: 0
     user-select: none
 
 .item
@@ -35,6 +39,7 @@
     cursor: pointer
     opacity: 0.5
     margin: 0 6px
+    padding: 0
     &.active
     &:hover
         opacity: 1

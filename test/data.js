@@ -1,4 +1,28 @@
 export default {
+    View: {
+        titlebar: {
+            platform: 'darwin',
+            actions: {
+                close: () => console.log("Close window..."),
+                max: () => console.log("Maximize window..."),
+                min: () => console.log("Minimize window..."),
+                fullscreen: (active) => {
+                    console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
+                }
+            }
+        },
+        viewOpts: {
+            toolbar: {
+                search: false,
+                buttons: [
+                    {title: "button-03", icon:"shuffle",},
+                    {title: "button-01", icon:"visibility"},
+                    {title: "button-02", icon:"favorite"},
+                    {title: "button-04", icon:"settings", active: true, toogle: true}
+                ]
+            }
+        }
+    },
     TitleBar: [
       {
           platform: 'darwin',

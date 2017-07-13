@@ -1,5 +1,5 @@
 .layout
-    background-color: var(--Window-bg)
+    background-color: #353535
     color: var(--Font-color)
     font-family: var(--Font-family)
     overlay(absolute)
@@ -12,6 +12,20 @@
         justify-content: space-between
         margin: 75px auto
         width: 720px
+        position: relative
+
+    .window
+        background: var(--Window-bg)
+        border-radius: 5px
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        display: block
+        position: relative
+        width: 720px
+        height: 480px
+        margin: 75px auto
+        padding: 0
+        overflow: auto
+
 
 
     &::-webkit-scrollbar-track
