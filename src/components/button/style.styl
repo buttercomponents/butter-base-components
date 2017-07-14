@@ -29,6 +29,7 @@
     vertical-align: middle
 
   i[class=material-icons]
+    color: inherit
     font-size: 18px
     width: 18px
     padding: 0
@@ -38,6 +39,7 @@
       animation: spin 2s linear infinite;
 
 /* Button types */
+
 .normal
     composes: button
 
@@ -45,12 +47,11 @@
     composes: button
     background-color: rgba(200,200,200, 0.25)
 
-
 .minimal
         composes: button
         background-color: transparent
-        color: var(--Button-bg)
         border: 2px solid var(--Button-bg)
+        color: var(--Button-bg)
 
         &:hover
         &:active
@@ -60,6 +61,7 @@
 
 
  /* Animations */
+ 
  @keyframes spin {
   100% {
     transform: rotate(-360deg);

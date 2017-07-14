@@ -1,7 +1,7 @@
 import React from 'react';
 import {translate} from 'react-i18next';
 import TitleBar from './components/title-bar';
-import Toolbar from './components/toolbar';
+import NavBar from './components/navbar';
 import Buttons  from './components/button';
 import Dropdowns  from './components/dropdown';
 import Switch  from './components/switch';
@@ -24,9 +24,9 @@ let Test = ({...props, t}) => (
         }
 
         {
-            props.toolbars.map((i, k) =>
+            props.navBars.map((i, k) =>
                 <div key={k} className={style.test}>
-                    <Toolbar {...i}/>
+                    <NavBar {...i}/>
                 </div>
             )
         }

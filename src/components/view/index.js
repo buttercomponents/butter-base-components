@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
-import Toolbar from '../toolbar';
+import NavBar from '../navbar';
 import style from './style.styl';
 
 class View extends Component {
+
+    static propTypes = {
+        navBar: PropTypes.object
+    }
+
     constructor (props) {
         super(props)
     }
@@ -13,7 +18,7 @@ class View extends Component {
         let {props, state} = this
         return (
             <div className={style.view}>
-                { props.toolbar && <Toolbar {...props.toolbar}/> }
+                { props.navBar && <NavBar {...props.navBar}/> }
                 <div className={style.content}>
                     {props.children}
                 </div>

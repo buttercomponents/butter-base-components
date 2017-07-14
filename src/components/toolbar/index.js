@@ -6,12 +6,6 @@ import style from './style.styl';
 
 const Styles = (a) => a.filter(b => !!b).join(' ');
 
-let GoBackButton = ({...props}) => (
-    <a className={style.button} onClick={props.action}>
-        <i className="material-icons">arrow_back</i>
-    </a>
-)
-
 class Button extends Component {
 
     static defaultProps = {
@@ -67,8 +61,6 @@ class Toolbar extends Component {
     }
 
     static propTypes = {
-        title: PropTypes.string,
-        goBack: PropTypes.func,
         search: PropTypes.bool,
         buttons: PropTypes.array
     }
@@ -77,15 +69,9 @@ class Toolbar extends Component {
         let {props} = this
         return (
             <nav id="toolbar" className={style.toolbar}>
-                <div className={style.menu}>
-                    {props.goBack && <GoBackButton action={props.goBack}/>}
-                    {props.title && <h1 className={style.title}>{props.title}</h1>}
-                </div>
-                <div className={style.actions}>
-                    {props.search && <Search />}
-                    <div className={style.buttons}>
-                        {props.buttons.map((i, k) => <Button key={k} {...i}/>)}
-                    </div>
+                {props.search && <Search />}
+                <div className={style.buttons}>
+                    {props.buttons.map((i, k) => <Button key={k} {...i}/>)}
                 </div>
             </nav>
         )
