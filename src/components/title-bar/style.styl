@@ -1,31 +1,38 @@
 .titlebar
+    align-items: center
     background: var(--Navbar-bg)
     color: #FFF
     display: flex
-    align-items: center
-    justify-content: center
     height: var(--Window-handler-height)
-    text-align: center
-    overflow: hidden
-    width: 100%
-    z-index: 15
+    justify-content: center
     vertical-align: middle
-    -webkit-app-region: drag
     margin: 0
-    top: 0px
     position: absolute
-    top: 0
+    text-align: center
+    top: 0px
     user-select: none
+    width: 100%
+    z-index: 99
+    -webkit-app-region: drag
+
+    .controls
+        right: 6px
+
+    .fullscreen
+        left: 0
+
+    .title
+        font-size: 14px
+        font-weight: bold
+
 
 .item
     align-items: center
     color: inherit
     display: flex;
     height: 100%
-    outline: none
-    position: absolute
     margin: 0 auto
-    padding: 0
+    position: absolute
     z-index: 10
     -webkit-app-region: no-drag
 
@@ -37,8 +44,8 @@
     background: transparent
     border: 0
     cursor: pointer
-    opacity: 0.5
     margin: 0 6px
+    opacity: 0.5
     padding: 0
     &.active
     &:hover
@@ -51,14 +58,11 @@
     border-radius: 30px
     border: 0
     cursor: pointer
-    display: inline-block
     height: 12px
     margin: 0 6px
     outline: none
     padding: 0
     width: 12px
-    vertical-align: middle;
-    box-shadow: none
 
 .min
     composes: button
@@ -78,22 +82,20 @@
     &:hover
         background-position: -65px 0px;
 
-.titlebar
-    &.win32,
-    &.linux
-        .controls
-            right: 6px
-        .fullscreen
-            left: 0
 
-    /* Darwin */
+
+.titlebar
+
+    /* Platform: Darwin */
 
     &.darwin
         .fullscreen
             right: 0
+            left: initial
 
         .controls
             left: 6px
+            right: initial
 
             button
                 background-image: none
@@ -117,7 +119,7 @@
                     &.close
                         background-position: -65px 0px
 
-    /* Windows */
+    /* Plataform: Windows */
 
     &.win32
         .controls
