@@ -10,7 +10,7 @@ let GoBackButton = ({...props}) => (
     </a>
 )
 
-class NavBar extends Component {
+class Navbar extends Component {
 
     static defaultProps = {
         toolbar: {}
@@ -36,4 +36,4 @@ class NavBar extends Component {
     }
 }
 
-export default translate(['navbar'], {wait: true, withRef: true})(NavBar);
+export default translate(['navbar'], {wait: true, withRef: true})(Navbar);

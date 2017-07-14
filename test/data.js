@@ -12,7 +12,7 @@ export default {
             }
         },
         viewOpts: {
-            navBar: {
+            navbar: {
                 toolbar: {
                     search: false,
                     buttons: [
@@ -164,7 +164,7 @@ export default {
             }
         ]
     },
-    navBars: [
+    navbars: [
         {
             toolbar: {
                 search: true,
