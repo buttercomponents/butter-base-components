@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import TitleBar     from './src/components/titlebar'
+import TitleBar     from './src/components/title-bar'
 import Navbar       from './src/components/navbar'
 import Alert        from './src/components/alert'
 import Buttons      from './src/components/button'
