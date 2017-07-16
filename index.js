@@ -8,7 +8,4 @@ import Dropdowns    from './src/components/dropdown'
 import Switch       from './src/components/switch'
 import Modal        from './src/components/modal'
 
-// XXX: backward compat
-let ActionBar = Navbar
-
-export {TitleBar, ActionBar, Navbar, Alert, Buttons, Dropdowns, Modal, Switch}
+export { TitleBar, Navbar, Alert, Buttons, Dropdowns, Modal, Switch }
