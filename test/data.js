@@ -1,5 +1,68 @@
 export default {
-    Buttons: [
+    view: {
+        titlebar: {
+            platform: 'darwin',
+            actions: {
+                close: () => console.log("Close window..."),
+                max: () => console.log("Maximize window..."),
+                min: () => console.log("Minimize window..."),
+                fullscreen: (active) => {
+                    console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
+                }
+            }
+        },
+        viewOpts: {
+            navbar: {
+                toolbar: {
+                    search: false,
+                    buttons: [
+                        {title: "button-01", icon:"shuffle"},
+                        {title: "button-02", icon:"visibility", toogle: true},
+                        {title: "button-03", icon:"favorite",  active: true, update: true, toogle: true},
+                        {title: "button-04", icon:"settings"}
+                    ]
+                }
+            }
+        }
+    },
+    titleBar: [
+      {
+          platform: 'darwin',
+          actions: {
+              close: () => console.log("Close window..."),
+              max: () => console.log("Maximize window..."),
+              min: () => console.log("Minimize window..."),
+              fullscreen: (active) => {
+                  console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
+              }
+          }
+      },
+      {
+          title: 'Linux-style',
+          platform: 'linux',
+          actions: {
+              close: () => console.log("Close window..."),
+              max: () => console.log("Maximize window..."),
+              min: () => console.log("Minimize window..."),
+              fullscreen: (active) => {
+                  console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
+              }
+          }
+      },
+      {
+          title: 'source_file.mp4',
+          platform: 'win32',
+          actions: {
+              close: () => console.log("Close window..."),
+              max: () => console.log("Maximize window..."),
+              min: () => console.log("Minimize window..."),
+              fullscreen: (active) => {
+                  console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
+              }
+          }
+      }
+    ],
+    buttons: [
         {
             type:"normal",
             title:"Normal button",
@@ -12,7 +75,8 @@ export default {
         },
         {
             type:"secondary",
-            title:"Small",
+            title:"Icon",
+            icon: "touch_app",
             action: () => {}
         },
         {
@@ -21,8 +85,8 @@ export default {
             action: () => {}
         },
     ],
-    Dropdowns: [
-        {
+    dropdowns: {
+        text: [{
             options: [
                 "0",
                 "1",
@@ -66,9 +130,41 @@ export default {
                 "Yak",
                 "Zebra"
             ]
-        }
-    ],
-    Navbars: [
+        }],
+        color: [
+            {
+                options: [
+                    "#555",
+                    "#777",
+                    "#999",
+                    "#BBB",
+                    "#DDD",
+                    "#FFF"
+                ]
+            },
+            {
+                options: [
+                    "#2d72d9",
+                    "#0b6fcb",
+                    "#1689f3",
+                    "#46a1f5",
+                    "#76baf8",
+                    "#a7d2fa"
+                ]
+            },
+            {
+                options: [
+                    "#ff0033",
+                    "#9933ff",
+                    "#0066ff",
+                    "#00cc33",
+                    "#ffcc00",
+                    "#ff9933",
+                ]
+            }
+        ]
+    },
+    navbars: [
         {
             toolbar: {
                 search: true,
@@ -102,12 +198,12 @@ export default {
                     {title: "button-01", icon:"fiber_manual_record"},
                     {title: "button-02", icon:"link"},
                     {title: "button-03", icon:"favorite_outline"},
-                    {title: "button-04", icon:"visibility"},
+                    {title: "button-04", icon:"visibility"}
                 ]
             }
         }
     ],
-    Switches: [
+    switches: [
         { selected: true },
         { selected: false },
         { selected: true },

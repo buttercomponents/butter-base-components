@@ -68,12 +68,12 @@ class Toolbar extends Component {
     render() {
         let {props} = this
         return (
-            <div id="toolbar" className={style.toolbar}>
-                { props.search && <Search /> }
-                <div className={style['buttons']}>
+            <nav id="toolbar" className={style.toolbar}>
+                {props.search && <Search />}
+                <div className={style.buttons}>
                     {props.buttons.map((i, k) => <Button key={k} {...i}/>)}
                 </div>
-            </div>
+            </nav>
         )
     }
 }
