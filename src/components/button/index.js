@@ -74,6 +74,10 @@ class ActionButton extends Component {
     }
 }
 
+ActionButton.propTypes = {
+    component: PropTypes.object.isRequired
+}
+
 let Buttons = {
     Button: translate(['button'], {wait: true, withRef: true})(Button),
     ActionButton: translate(['action-button'], {wait: true, withRef: true})(ActionButton)
