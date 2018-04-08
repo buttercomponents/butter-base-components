@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
+import {TransitionGroup, CCSTransition} from 'react-transition-group'
 import style from './style.styl';
 
 let Modal = ({position, action, children}) => (
@@ -16,14 +16,11 @@ class ButterModal extends Component {
     render () {
         let {show, ...props} = this.props
         return (
-            <CSSTransitionGroup
-                transitionName="popup"
-                transitionAppear={true}
-                transitionAppearTimeout={200}
-                transitionEnterTimeout={200}
-                transitionLeaveTimeout={200}>
-                {show && <Modal {...props}/>}
-            </CSSTransitionGroup>
+            <TransitionGroup>
+                <CSSTransition key={1} className="popup" timeout={{ enter: 500, exit: 300}}>
+                    {show && <Modal {...props}/>}
+                </CSSTransition>
+            </TransitionGroup>
         )
     }
 }
