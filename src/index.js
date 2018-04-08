@@ -14,8 +14,28 @@ import style from './style.styl';
 let Test = ({...props, t}) => (
     <div className={style.layout}>
         <Window titlebar={props.view.titlebar} {...props.view.viewOpts}>
-            lulu
-            <p><br/> lala </p>
+            <div className={style.test}>
+                {props.buttons.map((i, k) => <Buttons.Button key={k} {...i}/>)}
+            </div>
+
+            <div className={style.test}>
+                {props.dropdowns.text.map((i, k) => <Dropdowns.Dropdown key={k} {...i}/>)}
+            </div>
+
+            <div className={style.test}>
+                {props.dropdowns.color.map((i, k) => <Dropdowns.DropdownColor key={k} {...i}/>)}
+            </div>
+            
+            <div className={style.test}>
+                {props.switches.map((i, k) => <Switch key={k} {...i}/>)}
+            </div>
+
+            <div className={style.test} style={{
+                color: 'yellow'
+            }}>
+                <h1>stars</h1>
+                {props.stars.map((i, k) => <Stars key={k} {...i}/>)}
+            </div>
         </Window>
         {
             props.titleBar.map((i, k) =>
@@ -32,29 +52,6 @@ let Test = ({...props, t}) => (
                 </div>
             )
         }
-
-        <div className={style.test}>
-            {props.buttons.map((i, k) => <Buttons.Button key={k} {...i}/>)}
-        </div>
-
-        <div className={style.test}>
-            {props.dropdowns.text.map((i, k) => <Dropdowns.Dropdown key={k} {...i}/>)}
-        </div>
-
-        <div className={style.test}>
-            {props.dropdowns.color.map((i, k) => <Dropdowns.DropdownColor key={k} {...i}/>)}
-        </div>
-
-        <div className={style.test}>
-            {props.switches.map((i, k) => <Switch key={k} {...i}/>)}
-        </div>
-
-        <div className={style.test} style={{
-            color: 'yellow'
-        }}>
-            <h1>stars</h1>
-            {props.stars.map((i, k) => <Stars key={k} {...i}/>)}
-        </div>
     </div>)
 
 export default translate('test')(Test)
