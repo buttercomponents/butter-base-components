@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import style from './style.styl';
 
 function makeStars(count, max=5) {
@@ -21,5 +22,9 @@ let Stars = ({rating}) => (
         {makeStars(rating)}
     </div>
 )
+
+Stars.propTypes = {
+    rating: PropTypes.number.isRequired
+}
 
 export {Stars as default}
