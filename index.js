@@ -5,6 +5,8 @@ import Buttons      from './src/components/button'
 import Dropdowns    from './src/components/dropdown'
 import Switch       from './src/components/switch'
 import Modal        from './src/components/modal'
+import View         from './src/components/view'
+import Window       from './src/components/window'
 import Stars        from './src/components/stars'
 
-export { TitleBar, Navbar, Alert, Buttons, Dropdowns, Modal, Switch }
+export { TitleBar, Navbar, Alert, Buttons, Dropdowns, Modal, Switch, View, Window, Stars }
