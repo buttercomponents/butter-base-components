@@ -209,5 +209,11 @@ export default {
         { selected: true },
         { selected: false },
         { selected: true }
+    ],
+    stars: [
+        { rating: 2},
+        { rating: 10},
+        { rating: 7, count: 2},
+        { rating: 7, count: 14}
     ]
 }

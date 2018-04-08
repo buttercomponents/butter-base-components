@@ -5,16 +5,18 @@ import Navbar from './components/navbar';
 import Buttons  from './components/button';
 import Dropdowns  from './components/dropdown';
 import Switch  from './components/switch';
+import Stars from './components/stars';
 import View from './components/view';
-import style from './style.styl';
+import Window from './components/window';
 
+import style from './style.styl';
 
 let Test = ({...props, t}) => (
     <div className={style.layout}>
-        <div className={style.window}>
-            <TitleBar {...props.view.titlebar}/>
-            <View {...props.view.viewOpts}/>
-        </div>
+        <Window titlebar={props.view.titlebar} {...props.view.viewOpts}>
+            lulu
+            <p><br/> lala </p>
+        </Window>
         {
             props.titleBar.map((i, k) =>
                 <div className={style.test}>
@@ -26,7 +28,7 @@ let Test = ({...props, t}) => (
         {
             props.navbars.map((i, k) =>
                 <div key={k} className={style.test}>
-                    <Navbar {...i}/>
+                    <Navbar key={k} {...i}/>
                 </div>
             )
         }
@@ -43,12 +45,16 @@ let Test = ({...props, t}) => (
             {props.dropdowns.color.map((i, k) => <Dropdowns.DropdownColor key={k} {...i}/>)}
         </div>
 
-
         <div className={style.test}>
             {props.switches.map((i, k) => <Switch key={k} {...i}/>)}
         </div>
 
-    </div>
-)
+        <div className={style.test} style={{
+            color: 'yellow'
+        }}>
+            <h1>stars</h1>
+            {props.stars.map((i, k) => <Stars key={k} {...i}/>)}
+        </div>
+    </div>)
 
 export default translate('test')(Test)
