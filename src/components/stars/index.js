@@ -27,4 +27,8 @@ Stars.propTypes = {
     rating: PropTypes.number.isRequired
 }
 
+Stars.defaultProps = {
+    rating: 0
+}
+
 export {Stars as default}

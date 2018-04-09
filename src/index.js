@@ -8,12 +8,23 @@ import Switch  from './components/switch';
 import Stars from './components/stars';
 import View from './components/view';
 import Window from './components/window';
+import Menu from './components/menu';
 
 import style from './style.styl';
 
-let Test = ({...props, t}) => (
+let MakeNavbar = ({navbar, menu}) => (
+    <Navbar {...navbar}>
+        <Menu {...menu} />
+    </Navbar>
+)
+
+let Test = ({view, title, t, ...props}) => (
     <div className={style.layout}>
-        <Window titlebar={props.view.titlebar} {...props.view.viewOpts}>
+        <Window
+            bars={[
+                view.navbar ? <MakeNavbar navbar={view.navbar} menu={props.menu}/>: null
+            ]} >
+
             <div className={style.test}>
                 {props.buttons.map((i, k) => <Buttons.Button key={k} {...i}/>)}
             </div>
@@ -25,7 +36,7 @@ let Test = ({...props, t}) => (
             <div className={style.test}>
                 {props.dropdowns.color.map((i, k) => <Dropdowns.DropdownColor key={k} {...i}/>)}
             </div>
-            
+
             <div className={style.test}>
                 {props.switches.map((i, k) => <Switch key={k} {...i}/>)}
             </div>
@@ -39,8 +50,8 @@ let Test = ({...props, t}) => (
         </Window>
         {
             props.titleBar.map((i, k) =>
-                <div className={style.test}>
-                    <TitleBar key={k} {...i}/>
+                <div key={k} className={style.test}>
+                    <TitleBar {...i}/>
                 </div>
             )
         }
