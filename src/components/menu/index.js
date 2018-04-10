@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import style from './style.styl';
 
 let MenuItem = ({title, active}) => (
-    <li classeName={active ? 'active' : null}><a href="">{title}</a></li>
+    <li className={active ? 'active' : null}><a href="">{title}</a></li>
 )
 
 let Menu = ({items, active}) => (
