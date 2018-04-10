@@ -21,9 +21,9 @@ let MakeNavbar = ({navbar, menu}) => (
 let Test = ({view, title, t, ...props}) => (
     <div className={style.layout}>
         <Window
-            bars={[
+            bars={
                 view.navbar ? <MakeNavbar navbar={view.navbar} menu={props.menu}/>: null
-            ]} >
+             } >
 
             <div className={style.test}>
                 {props.buttons.map((i, k) => <Buttons.Button key={k} {...i}/>)}
