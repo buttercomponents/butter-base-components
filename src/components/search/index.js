@@ -13,7 +13,7 @@ class Search extends Component {
         let {props, state} = this
         return (
             <div id="search" className={style.search}>
-                <input type="text" placeholder="Search..."/>
+                <input type="text" className={style.input} placeholder="Search..."/>
                 <i className="material-icons">search</i>
             </div>
         )
