@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import style from './style.styl';
 
 let MenuItem = ({title, active}) => (
-    <li className={active ? 'active' : null}><a href="">{title}</a></li>
+    <li className={active ? style.active : null}><a href="#">{title}</a></li>
 )
 
 let Menu = ({items, active}) => (
@@ -24,7 +24,7 @@ Menu.propTypes = {
 }
 
 Menu.defaultProps = {
-    active: 1
+    active: 1,
 }
 
 export {Menu as default}

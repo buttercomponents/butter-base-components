@@ -16,53 +16,59 @@
     li {
         display: inline-block;
         float: left;
-        margin: 0;
+        margin-right: 16px;
         font-size: 22px;
         font-weight: bold;
-        line-height: 28px;
         opacity: 0.4;
         text-transform: uppercase;
         position: relative;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:hover a::after {
+            margin auto;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
+        a {
+            color: #ffffff;
+            display: block;
+            text-decoration: none;
+            padding-bottom: 4px;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+        }
+
+        a::after {
+            content: " ";
+            background: #FFF;
+            bottom: 0;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            width: 0;
+            border-radius: 2px;
+            -webkit-transition: all 0.2s cubic-bezier(0.25, 0.25, 0.25, 1.25);
+            transition: all 0.2s cubic-bezier(0.25, 0.25, 0.25, 1.25);
+
+        }
     }
 
     li.active {
         opacity: 1;
 
-        a {
-            opacity: 1;
-            border-bottom: 3px solid transparent;
-            color: #ffffff;
-            opacity: 0.4;
-            display: block;
-            padding: 4px 0;
-            margin: 0 20px;
-            text-decoration: none;
-            -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-        }
 
-        a:hover {
-            opacity: 0.8;
-        }
-
-        li:hover,
-        li:hover a {
+        &:hover {
             opacity: 1;
         }
 
-
-        li:hover a::after {
-            content: " ";
-            background: #FFF;
-            bottom: 0;
-            height: 3px;
-            position: absolute;
-            left: 0;
-            margin-left: 20px;
-            -webkit-transition: all 0.2s cubic-bezier(0.25, 0.25, 0.25, 1.25);
-            transition: all 0.2s cubic-bezier(0.25, 0.25, 0.25, 1.25);
-            width: calc( 100% - 40px);
-            border-radius: 3px;
+        a::after {
+          background-color: var(--Main-color);
+          width: 100%;
         }
     }
 }
