@@ -7,7 +7,18 @@ function getScore(count, max=5) {
     return (max * count) / top;
 }
 
-class Stars extends React.Component{
+class Stars extends React.Component {
+
+   static propTypes = {
+        rating: PropTypes.number.isRequired,
+        max: PropTypes.number,
+    }
+
+    static defaultProps = {
+        rating: 0,
+        max: 5,
+    }
+
     constructor(props) {
         super(props)
         const { rating, max } = this.props;
@@ -31,7 +42,7 @@ class Stars extends React.Component{
         hasHalfStar && stars.push(<i key={'half-star-${score}'} className={`material-icons ${style.starFull}`}>star_half</i>)
 
         for (let i = 0; i < emptyStars; i += 1) {
-            stars.push(<i key={`empty-${i}`} className={`material-icons ${style.starFull}`}>star_border</i>)
+            stars.push(<i key={`empty-${i}`} className={`material-icons ${style.starEmpty}`}>star_border</i>)
         }
 
         return stars
@@ -40,25 +51,13 @@ class Stars extends React.Component{
     render() {
         const { score } = this.state;
         const { rating, max } = this.props;
-        
+
         return (
             <div className={`${style.stars}`} title={`${score} / ${max}`}>
                 {this.getStars(rating, max)}
             </div>
         )
     }
-}
-
-
-
-Stars.propTypes = {
-    rating: PropTypes.number.isRequired,
-    max: PropTypes.number,
-}
-
-Stars.defaultProps = {
-    rating: 0,
-    max: 5,
 }
 
 export {Stars as default}
