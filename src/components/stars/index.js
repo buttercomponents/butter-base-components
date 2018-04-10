@@ -4,16 +4,21 @@ import style from './style.styl';
 
 function makeStars(count, max=5) {
     let ret = []
-    let i = 0
+    const top =  count <= 10 ? 10 : 100;
+    const score = (max * count) / top;
+    const hasHalfStar = score % 1 >= 0.5;
+    const truncScore = Math.trunc(score);
+    const emptyStars = max - truncScore - ( hasHalfStar ? 1 : 0 );
 
-    for (i = 0; i < count; i += 1) {
-        ret.push(<i key={i} className={`material-icons ${style.starFull}`}>star</i>)
+    for (let i = 0; i < truncScore; i += 1) {
+        ret.push(<i key={`full-${i}`} className={`material-icons ${style.starFull}`}>star</i>)
     }
 
-    for (; i < max; i += 1) {
-        ret.push(<i key={i} className={`material-icons ${style.starEmpty}`}>star</i>)
-    }
+    hasHalfStar && ret.push(<i key={'half-star-${score}'} className={`material-icons ${style.starFull}`}>star_half</i>)
 
+    for (let i = 0; i < emptyStars; i += 1) {
+        ret.push(<i key={`empty-${i}`} className={`material-icons ${style.starFull}`}>star_border</i>)
+    }
     return ret
 }
 
