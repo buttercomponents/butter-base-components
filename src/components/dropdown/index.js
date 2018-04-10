@@ -109,17 +109,53 @@ class Dropdown extends Component {
     }
 }
 
-const colorOpts = {
-    type: "color",
-    item: ColorDropdownItem,
-    label: ColorLabelItem
-}
+class DropdownColor extends Component {
+    constructor(props) {
+        super(props)
+        this.colorPicker = React.createRef()
+        this.state = {
+            colors: this.props.options,
+        }
+    }
 
-let DropdownColor =  (props) => (
-    <Dropdown config={colorOpts}  {...props}>
-        <DropdownItem value="More colors..."/>
-    </Dropdown>
-)
+    addColor(color) {
+        const colors = this.state.colors.slice();
+        colors.unshift(color);
+        this.setState({colors})
+    }
+
+    openColorPicker = () => {
+        this.colorPicker.current.click();
+    }
+
+    handlePicker = (input) => {
+        this.addColor(input.value)
+    }
+
+    componentDidMount() {
+        this.colorPicker.current.addEventListener(
+            'change',
+            event => this.handlePicker(event.target),
+            false
+        )
+    }
+
+    render() {
+        const {props, state} = this;
+
+        const colorOpts = {
+            type: "color",
+            item: ColorDropdownItem,
+            label: ColorLabelItem
+        }
+
+        return(
+            <Dropdown config={colorOpts}  {...props} options={state.colors}>
+                <input style={{display: 'none'}} ref={this.colorPicker} type="color" />
+                <DropdownItem value="More colors..." onSelect={this.openColorPicker}/>
+            </Dropdown>);
+        }
+}
 
 let Dropdowns = {
     Dropdown: translate(['dropdown'], {wait: true, withRef: true})(Dropdown),
