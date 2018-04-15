@@ -9,6 +9,5 @@ import Modal        from './src/components/modal'
 import View         from './src/components/view'
 import Window       from './src/components/window'
 import Stars        from './src/components/stars'
-import Menu         from './src/components/menu'
 
-export { TitleBar, Navbar, Toolbar, Alert, Buttons, Dropdowns, Modal, Switch, View, Window, Stars, Menu }
+export { TitleBar, Navbar, Toolbar, Alert, Buttons, Dropdowns, Modal, Switch, View, Window, Stars }

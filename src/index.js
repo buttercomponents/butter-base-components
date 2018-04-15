@@ -9,7 +9,8 @@ import Switch  from './components/switch';
 import Stars from './components/stars';
 import View from './components/view';
 import Window from './components/window';
-import Menu from './components/menu';
+
+import Menu from 'butter-component-menu';
 
 import style from './style.styl';
 

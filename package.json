@@ -37,7 +37,8 @@
   },
   "homepage": "https://github.com/buttercomponents/butter-base-components",
   "devDependencies": {
-    "butter-component-builder": "buttercomponents/butter-component-builder"
+    "butter-component-builder": "buttercomponents/butter-component-builder",
+    "butter-component-menu": "buttercomponents/butter-component-menu"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
