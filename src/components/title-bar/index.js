@@ -80,7 +80,10 @@ class TitleBar extends Component {
             max: PropTypes.func
         }),
         platform: PropTypes.string,
-        title: PropTypes.string
+        title: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.object
+        ])
     }
 
     constructor (props) {
