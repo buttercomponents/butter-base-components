@@ -1,5 +1,6 @@
 import TitleBar     from './src/components/title-bar'
 import Navbar       from './src/components/navbar'
+import Toolbar      from './src/components/toolbar'
 import Alert        from './src/components/alert'
 import Buttons      from './src/components/button'
 import Dropdowns    from './src/components/dropdown'
@@ -10,4 +11,4 @@ import Window       from './src/components/window'
 import Stars        from './src/components/stars'
 import Menu         from './src/components/menu'
 
-export { TitleBar, Navbar, Alert, Buttons, Dropdowns, Modal, Switch, View, Window, Stars, Menu }
+export { TitleBar, Navbar, Toolbar, Alert, Buttons, Dropdowns, Modal, Switch, View, Window, Stars, Menu }
