@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
-import Modal from '../modal'
+import Modal from 'butter-component-modal'
 import style from './style.styl';
 
 class Button extends Component {
