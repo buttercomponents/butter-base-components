@@ -54,7 +54,7 @@ class Stars extends React.Component {
 
         return (
             <div className={`${style.stars}`} title={`${score} / ${max}`}>
-                {this.getStars(rating, max)}
+                {this.getStars()}
             </div>
         )
     }
