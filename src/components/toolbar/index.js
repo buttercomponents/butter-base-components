@@ -6,7 +6,7 @@ import style from './style.styl';
 
 const Styles = (a) => a.filter(b => !!b).join(' ');
 
-class Button extends Component {
+class ToolbarButton extends Component {
 
     static defaultProps = {
         action: () => {},
@@ -53,29 +53,23 @@ class Button extends Component {
     }
 }
 
-class Toolbar extends Component {
+let Toolbar = ({search, buttons}) => (
+    <nav id="toolbar" className={style.toolbar}>
+        {search && <Search />}
+        <div className={style.buttons}>
+            {buttons.map((i, k) => <ToolbarButton key={k} {...i}/>)}
+        </div>
+    </nav>
+)
 
-    static defaultProps: {
-        search: false,
-        buttons: []
-    }
+Toolbar.defaultProps = {
+    search: false,
+    buttons: []
+}
 
-    static propTypes = {
-        search: PropTypes.bool,
-        buttons: PropTypes.array
-    }
-
-    render() {
-        let {props} = this
-        return (
-            <nav id="toolbar" className={style.toolbar}>
-                {props.search && <Search />}
-                <div className={style.buttons}>
-                    {props.buttons.map((i, k) => <Button key={k} {...i}/>)}
-                </div>
-            </nav>
-        )
-    }
+Toolbar.propTypes = {
+    search: PropTypes.bool,
+    buttons: PropTypes.array
 }
 
 export default translate(['toolbar'], {wait: true, withRef: true})(Toolbar);

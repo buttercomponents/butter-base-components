@@ -19,16 +19,14 @@ export default {
                 }
             }
         },
-        navbar: {
-            toolbar: {
-                search: false,
-                buttons: [
-                    {title: "button-01", icon:"shuffle"},
-                    {title: "button-02", icon:"visibility", toogle: true},
-                    {title: "button-03", icon:"favorite",  active: true, update: true, toogle: true},
-                    {title: "button-04", icon:"settings"}
-                ]
-            }
+        toolbar: {
+            search: false,
+            buttons: [
+                {title: "button-01", icon:"shuffle"},
+                {title: "button-02", icon:"visibility", toogle: true},
+                {title: "button-03", icon:"favorite",  active: true, update: true, toogle: true},
+                {title: "button-04", icon:"settings"}
+            ]
         }
     },
     titleBar: [

@@ -10,33 +10,26 @@ let GoBackButton = ({...props}) => (
     </a>
 )
 
-let Navbar = ({goBack, title, toolbar, children, ...props}) => (
+let Navbar = ({goBack, title, right, left, ...props}) => (
     <nav id="navbar" className={style.navbar}>
         <div className={style.menu}>
             {goBack && <GoBackButton action={goBack}/>}
-            {children}
+            {left && left}
             {title && <h1 className={style.title}>{title}</h1>}
         </div>
-        {<Toolbar {...toolbar}/>}
+        {right && right}
     </nav>
 )
 
-Navbar.defaultProps = {
-    toolbar: {
-        search: true,
-        buttons: [
-            {title: "button-01", icon:"shuffle"},
-            {title: "button-02", icon:"visibility", toogle: true},
-            {title: "button-03", icon:"favorite",  active: true, update: true, toogle: true},
-            {title: "button-04", icon:"settings"}
-        ]
-    }
-}
 
 Navbar.propTypes = {
     title: PropTypes.string,
-    goBack: PropTypes.func,
-    toolbar: PropTypes.object
+    goBack: PropTypes.func
 }
 
-export default translate(['navbar'], {wait: true, withRef: true})(Navbar);
+let Translated = translate(['navbar'], {wait: true, withRef: true})(Navbar)
+
+export {
+    Translated as default,
+    GoBackButton
+}
