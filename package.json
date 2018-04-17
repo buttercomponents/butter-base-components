@@ -2,7 +2,7 @@
   "name": "butter-base-components",
   "version": "0.1.0",
   "description": "Base Butter Components used by other, more specific component code",
-  "main": "dist/bundle.js",
+  "main": "dist/",
   "repository": {
     "type": "git",
     "url": "https://github.com/buttercomponents/butter-base-components.git"
