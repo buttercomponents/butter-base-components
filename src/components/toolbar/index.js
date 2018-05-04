@@ -72,4 +72,4 @@ Toolbar.propTypes = {
     buttons: PropTypes.array
 }
 
-export default translate(['toolbar'], {wait: true, withRef: true})(Toolbar);
+export default translate(['toolbar'])(Toolbar);

@@ -39,4 +39,4 @@ class Switch extends Component {
     }
 }
 
-export default translate(['switch'], {wait: true, withRef: true})(Switch);
+export default translate(['switch'])(Switch);

@@ -79,8 +79,8 @@ ActionButton.propTypes = {
 }
 
 let Buttons = {
-    Button: translate(['button'], {wait: true, withRef: true})(Button),
-    ActionButton: translate(['action-button'], {wait: true, withRef: true})(ActionButton)
+    Button: translate(['button'])(Button),
+    ActionButton: translate(['action-button'])(ActionButton)
 }
 
 export {Buttons as default}

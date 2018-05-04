@@ -119,4 +119,4 @@ class TitleBar extends Component {
     }
 }
 
-export default translate(['titlebar'], {wait: true, withRef: true})(TitleBar)
+export default translate(['titlebar'])(TitleBar)

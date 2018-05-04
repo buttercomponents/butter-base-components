@@ -22,4 +22,4 @@ class Search extends Component {
 }
 
 
-export default translate(['search'], {wait: true, withRef: true})(Search);
+export default translate(['search'])(Search);

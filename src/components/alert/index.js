@@ -15,4 +15,4 @@ class Alert extends Component {
     }
 }
 
-export default translate(['alert'], {wait: true, withRef: true})(Alert);
+export default translate(['alert'])(Alert);

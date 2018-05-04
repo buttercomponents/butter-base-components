@@ -27,7 +27,7 @@ Navbar.propTypes = {
     goBack: PropTypes.func
 }
 
-let Translated = translate(['navbar'], {wait: true, withRef: true})(Navbar)
+let Translated = translate(['navbar'])(Navbar)
 
 export {
     Translated as default,

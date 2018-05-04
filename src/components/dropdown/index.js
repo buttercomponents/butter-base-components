@@ -158,8 +158,8 @@ class DropdownColor extends Component {
 }
 
 let Dropdowns = {
-    Dropdown: translate(['dropdown'], {wait: true, withRef: true})(Dropdown),
-    DropdownColor: translate(['dropdown-color'], {wait: true, withRef: true})(DropdownColor)
+    Dropdown: translate(['dropdown'])(Dropdown),
+    DropdownColor: translate(['dropdown-color'])(DropdownColor)
 }
 
 export {Dropdowns as default}
