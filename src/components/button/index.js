@@ -14,7 +14,6 @@ class Button extends Component {
 
     static propTypes = {
         type: PropTypes.string.isRequired,
-        title: PropTypes.string,
         icon: PropTypes.string,
         loading: PropTypes.bool,
         apply: PropTypes.func

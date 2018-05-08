@@ -40,13 +40,13 @@
             background-color: var(--Main-color)
 
     div[class=dropdown-toggle]
+        display: flex
         align-items: center
         background: var(--Dropdown-bg)
         border-radius: var(--Dropdown-radius)
         box-shadow: var(--Dropdown-shadow)
         color: var(--Dropdown-color)
         cursor: pointer
-        display: flex
         font-family: var(--Font-title)
         font-size: 16px
         font-weight: normal
@@ -61,13 +61,14 @@
             display: inline-block
             font-size: 0.9em
             line-height: 0.75em
-            margin: 0
-            min-width: 150px
+            margin: auto
             padding: 0
-            padding-left: 5px
+            padding-left: 8px
             text-align: left
             text-transform: capitalize
+            vertical-align: text-bottom
         i
+            vertical-align: bottom
             font-size: 1em
             margin:0!important
             margin-left: 10px
@@ -102,7 +103,7 @@
     background-clip: border-box
     cursor: pointer
     opacity: 0.75
-    padding: 8px 0 8px 15px
+    padding: 8px 15px
     margin: 0
     transition: all 0.2s ease
     &:hover
