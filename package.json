@@ -1,6 +1,6 @@
 {
   "name": "butter-base-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Base Butter Components used by other, more specific component code",
   "main": "dist/",
   "repository": {
