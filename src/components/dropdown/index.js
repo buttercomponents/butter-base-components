@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import style from './style.styl';
 
+const Identity = a => a
+
 //Dropdown Item component
 let DropdownItem = (props) => (
     <li className={style.action} onClick={props.onSelect}>
@@ -27,10 +29,10 @@ const ColorLabelItem = (props) => (
     </div>
 )
 
-const DropdownToggle = (props) => (
-    <div className="dropdown-toggle" onClick={props.onClick}>
-        {props.children}
-        <i className="material-icons"></i>
+const DropdownToggle = ({children, onClick=Identity, toggle=true}) => (
+    <div className="dropdown-toggle" onClick={onClick}>
+        {children}
+        {toggle ? <i className="material-icons"></i>:null}
     </div>
 )
 
@@ -77,13 +79,23 @@ class Dropdown extends Component {
     }
 
     render() {
-        let {props, state} = this
+        const {props, state} = this
         const Item = props.config.item
         const Label = props.config.label
-        const selected = props.options[state.selected]
+        const {options} = props
+
+        const selected = options[state.selected]
 
         const dropdownStyle = style[`dropdown-${props.config.type}`]
         let activeStyle = state.open ? 'open':''
+
+        if (! options || ! options.length) {
+            return (<div className={`${dropdownStyle}  ${activeStyle}`} tabIndex="-1" onBlur={this.close.bind(this)}>
+                <DropdownToggle {...props} toggle={false}>
+                    <Label value={'Default'}/>
+                </DropdownToggle>
+            </div>)
+        }
 
         return  (
             <div className={`${dropdownStyle}  ${activeStyle}`} tabIndex="-1" onBlur={this.close.bind(this)}>
@@ -154,7 +166,7 @@ class DropdownColor extends Component {
                 <input style={{display: 'none'}} ref={this.colorPicker} type="color" />
                 <DropdownItem value="More colors..." onSelect={this.openColorPicker}/>
             </Dropdown>);
-        }
+    }
 }
 
 let Dropdowns = {
