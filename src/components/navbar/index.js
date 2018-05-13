@@ -9,7 +9,7 @@ const Identity = (a) => (a)
 let GoBackButton = ({action = Identity, title}) => (
     <a className={style.button} onClick={action}>
         <i className="material-icons">arrow_back</i>
-        {title ? title : null}
+        {title ? <span>{title}</span> : null}
     </a>
 )
 
