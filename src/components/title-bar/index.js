@@ -110,7 +110,7 @@ class TitleBar extends Component {
         return (
             <nav className={Styles([style.titlebar, style[props.platform]])}>
                 <div className={style.controls}>
-                    {this.getButtons(props.platform).map((i,k) => <Button key={k} {...i}/>)}
+                    {this.getButtons(props.platform).map((i, k) => <Button key={k} {...i}/>)}
                 </div>
                 <Fullscreen action={props.actions.fullscreen}/>
                 <h1 className={style.title}>{props.title}</h1>

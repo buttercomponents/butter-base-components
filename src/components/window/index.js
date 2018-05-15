@@ -6,9 +6,9 @@ import TitleBar from '../title-bar';
 import Navbar from '../navbar';
 import style from './style.styl';
 
-const Window = ({title, titlebar, bars, ...props}) => (
+const Window = ({title, titlebar, bars, actions, ...props}) => (
     <div className={style.windowOuter}>
-        <TitleBar title={title} {...titlebar}/>
+        <TitleBar title={title} actions={actions} {...titlebar}/>
         {bars}
         <div className={style.windowInner}>
             <View>
@@ -16,7 +16,6 @@ const Window = ({title, titlebar, bars, ...props}) => (
             </View>
         </div>
     </div>
-
 )
 
 const DemoWindow = ({opacity = 0.5, ...props}) => (
@@ -31,13 +30,13 @@ const DemoWindow = ({opacity = 0.5, ...props}) => (
 Window.defaultProps = {
     titlebar: {
         platform: 'darwin',
-        actions: {
-            close: () => console.log("Close window..."),
-            max: () => console.log("Maximize window..."),
-            min: () => console.log("Minimize window..."),
-            fullscreen: (active) => {
-                console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
-            }
+    },
+    actions: {
+        close: () => console.log("Close window..."),
+        max: () => console.log("Maximize window..."),
+        min: () => console.log("Minimize window..."),
+        fullscreen: (active) => {
+            console.log(`${active ? "Enter" : "Exit"} Fullscreen...`)
         }
     },
     navbar: {
