@@ -18,7 +18,7 @@ GoBackButton.propTypes = {
 }
 
 const Navbar = ({goBack, title, right, left, type}) => (
-    <nav id="navbar" className={`${style.navbar} ${type}`}>
+    <nav id="navbar" className={`${style.navbar} ${type ? type : ''}`}>
         <div className={style.menu}>
             {goBack && <GoBackButton {...goBack}/>}
             {left && left}
