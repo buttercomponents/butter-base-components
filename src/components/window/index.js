@@ -6,20 +6,25 @@ import TitleBar from '../title-bar';
 import Navbar from '../navbar';
 import style from './style.styl';
 
-let Window = ({title, titlebar, bars, opacity = 0.5, ...props}) => (
-    <div style={{
+const Window = ({title, titlebar, bars, ...props}) => (
+    <div className={style.windowOuter}>
+        <TitleBar title={title} {...titlebar}/>
+        {bars}
+        <div className={style.windowInner}>
+            <View>
+                {props.children}
+            </View>
+        </div>
+    </div>
+
+)
+
+const DemoWindow = ({opacity = 0.5, ...props}) => (
+    <div className={style.demoWindow} style={{
         backgroundColor: `rgba(var(--Window-bg), ${opacity})`,
         marginBottom: '150px'
     }}>
-        <div className={style.windowOuter}>
-            <TitleBar title={title} {...titlebar}/>
-            {bars}
-            <div className={style.windowInner}>
-                <View>
-                    {props.children}
-                </View>
-            </div>
-        </div>
+        <Window {...props} />
     </div>
 )
 
@@ -48,4 +53,4 @@ Window.defaultProps = {
     }
 }
 
-export {Window as default}
+export {Window as default, DemoWindow}

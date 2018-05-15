@@ -1,11 +1,11 @@
 .windowOuter
-    width: 80%
-    height: 80%
     background-color: var(--Window-bg)
     color: var(--Font-color)
     font-family: var(--Font-family)
     overlay(relative)
-    margin: 75px auto
+    overflow: hidden
+    height: calc(100% - var(--Window-handler-height))
+    width: 100%
 
     .windowInner
         width: 100%
@@ -21,6 +21,10 @@
         overflow-y: auto
         scrollable()
 
+.demoWindow
+    margin: 75px auto
+    width: 80%
+    height: 80%
 
 .sticky
   position: sticky

@@ -8,7 +8,7 @@ import Dropdowns  from './components/dropdown';
 import Switch  from './components/switch';
 import Stars from './components/stars';
 import View from './components/view';
-import Window from './components/window';
+import Window, {DemoWindow} from './components/window';
 
 import Menu from 'butter-component-menu';
 
@@ -16,7 +16,7 @@ import style from './style.styl';
 
 let Test = ({view, title, t, ...props}) => (
     <div className={style.layout}>
-        <Window bars={[
+        <DemoWindow bars={[
             <Navbar left={<Menu {...props.menu}/>} right={<Toolbar {...view.toolbar}/>}/>
         ]}>
 
@@ -42,7 +42,7 @@ let Test = ({view, title, t, ...props}) => (
         <h1>stars</h1>
         {props.stars.map((i, k) => <Stars key={k} {...i}/>)}
     </div>
-        </Window>
+        </DemoWindow>
         {
             props.titleBar.map((i, k) =>
                 <div key={k} className={style.test}>
