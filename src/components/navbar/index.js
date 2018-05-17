@@ -17,6 +17,10 @@ GoBackButton.propTypes = {
     action: PropTypes.func.isRequired,
 }
 
+GoBackButton.defaultProps = {
+    title: 'back'
+}
+
 const Navbar = ({goBack, title, right, left, type}) => (
     <nav id="navbar" className={`${style.navbar} ${type ? type : ''}`}>
         <div className={style.menu}>
