@@ -34,7 +34,7 @@ const Navbar = ({goBack, title, right, left, type}) => (
 
 Navbar.propTypes = {
     title: PropTypes.string,
-    goBack: PropTypes.func
+    goBack: PropTypes.object
 }
 
 const Translated = translate(['navbar'])(Navbar)
