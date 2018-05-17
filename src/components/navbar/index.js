@@ -21,14 +21,16 @@ GoBackButton.defaultProps = {
     title: 'back'
 }
 
-const Navbar = ({goBack, title, right, left, type}) => (
+const Navbar = ({goBack, title, right, children, left, type}) => (
     <nav id="navbar" className={`${style.navbar} ${type ? type : ''}`}>
-        <div className={style.menu}>
+        <div className={style.menu} role='navbar-left'>
             {goBack && <GoBackButton {...goBack}/>}
-            {left && left}
+            {left}
             {title && <h1 className={style.title}>{title}</h1>}
         </div>
-        {right && right}
+        {children && <div role='navbar-center'>{children}</div>}
+        {(children || right) && <div role='navbar-right'>{right}</div>}
+
     </nav>
 )
 
