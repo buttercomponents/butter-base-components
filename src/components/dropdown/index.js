@@ -144,14 +144,6 @@ class DropdownColor extends Component {
         this.addColor(input.value)
     }
 
-    componentDidMount() {
-        this.colorPicker.current.addEventListener(
-            'change',
-            event => this.handlePicker(event.target),
-            false
-        )
-    }
-
     render() {
         const {props, state} = this;
 
