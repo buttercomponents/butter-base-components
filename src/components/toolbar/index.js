@@ -46,7 +46,7 @@ class ToolbarButton extends Component {
         let classList = Styles([style.button, state.active && style.active, state.update && style.update])
 
         return (
-            <div className={classList} onClick={this.onClick.bind(this)} title={props.title}>
+            <div className={classList} onClick={this.onClick.bind(this)} title={props.title} role={props.title}>
                 <i className="material-icons">{props.icon}</i>
             </div>
         )
