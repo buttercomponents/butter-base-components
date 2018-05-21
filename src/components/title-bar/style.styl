@@ -13,6 +13,16 @@
     z-index: 99
     -webkit-app-region: drag
     position: relative
+    overflow: hidden
+    transition: all 250ms ease-in-out
+
+    &.shrink {
+      max-height: 0
+
+      .fullscreen {
+        padding-top: 4vh;
+      }
+    }
 
     .controls
         right: 6px
@@ -38,6 +48,7 @@
     composes: item
 
 .fullscreen
+    position: fixed
     composes: item
     background: transparent
     border: 0
