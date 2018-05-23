@@ -7,7 +7,7 @@ import style from './style.styl';
 const Identity = (a) => (a)
 
 const GoBackButton = ({action = Identity, title}) => (
-    <a className={style.button} onClick={action}>
+    <a className={style.backButton} onClick={action}>
         <i className="material-icons">arrow_back</i>
         {title ? <span>{title}</span> : null}
     </a>

@@ -1,3 +1,21 @@
+.backButton {
+    opacity: 0.75;
+    cursor: pointer;
+    transition: opacity 0.25s;
+    font-size: 3vw;
+    font-family: var(--Font-title);
+    font-weight: bolder;
+    font-variant: all-petite-caps;
+    padding-right: 4vw;
+
+    i {
+        position: relative;
+        top: 0.7vw;
+        font-size: 3vw;
+        font-variant: common-ligatures;
+    }
+}
+
 .navbar
     position: fixed
     background-color: var(--Navbar-bg)
@@ -36,10 +54,4 @@
             font-family: var(--Font-title)
             font-weight: bold
             text-transform: uppercase
-        .button
-            opacity: 0.75
-            cursor: pointer
-            transition: opacity 0.25s
 
-            &:hover
-                opacity: 1
