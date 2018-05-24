@@ -53,9 +53,9 @@ class ToolbarButton extends Component {
     }
 }
 
-let Toolbar = ({search, buttons}) => (
+let Toolbar = ({search, buttons, actions}) => (
     <nav id="toolbar" className={style.toolbar}>
-        {search && <Search />}
+        {search && <Search action={actions.search}/>}
         <div className={style.buttons}>
             {buttons.map((i, k) => <ToolbarButton key={k} {...i}/>)}
         </div>
@@ -64,12 +64,14 @@ let Toolbar = ({search, buttons}) => (
 
 Toolbar.defaultProps = {
     search: false,
-    buttons: []
+    buttons: [],
+    actions: {}
 }
 
 Toolbar.propTypes = {
     search: PropTypes.bool,
-    buttons: PropTypes.array
+    buttons: PropTypes.array,
+    actions: PropTypes.object
 }
 
 export default translate(['toolbar'])(Toolbar);
