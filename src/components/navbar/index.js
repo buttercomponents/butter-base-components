@@ -56,6 +56,10 @@ Navbar.propTypes = {
   goBack: PropTypes.object
 }
 
+Navbar.defaultProps = {
+    show: true
+}
+
 const Translated = translate(['navbar'])(Navbar)
 
 export {
