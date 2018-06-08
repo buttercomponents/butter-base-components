@@ -40,28 +40,12 @@ class TitleBar extends Component {
             min: PropTypes.func,
             max: PropTypes.func
         }),
+        fullscreen: PropTypes.bool.isRequired,
         platform: PropTypes.string,
         title: PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.object
         ])
-    }
-
-    constructor (props) {
-        super();
-
-        this.state = {
-            fullscreen: props.fullscreen
-        }
-    }
-
-    setFullscreen () {
-        this.setState(prevState => {
-            const {actions} = this.props
-            const fullscreen = !!!prevState.fullscreen
-            actions.fullscreen(fullscreen)
-            return {fullscreen}
-        })
     }
 
     getButtons () {
@@ -80,20 +64,22 @@ class TitleBar extends Component {
     }
 
     render () {
-        let {props, state} = this
+
+        const {actions, platform, fullscreen, title} = this.props
+
         return (
             <nav className={Styles([
                     style.titlebar,
-                    style[props.platform],
-                    state.fullscreen ? style.shrink : null
+                    style[platform],
+                    fullscreen ? style.shrink : null
             ])}>
                 <div className={style.controls}>
-                    {this.getButtons(props.platform).map((i, k) => <Button key={k} {...i}/>)}
+                    {this.getButtons(platform).map((i, k) => <Button key={k} {...i}/>)}
                 </div>
-                <button className={style.fullscreen} onClick={this.setFullscreen.bind(this)}>
-                    <i className="material-icons">{state.fullscreen ? 'fullscreen_exit' : 'fullscreen'}</i>
+                <button className={style.fullscreen} onClick={actions.fullscreen}>
+                    <i className="material-icons">{fullscreen ? 'fullscreen_exit' : 'fullscreen'}</i>
                 </button>
-                <h1 className={style.title}>{props.title}</h1>
+                <h1 className={style.title}>{title}</h1>
             </nav>
         )
     }

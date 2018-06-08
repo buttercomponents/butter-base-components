@@ -6,17 +6,56 @@ import TitleBar from '../title-bar';
 import Navbar from '../navbar';
 import style from './style.styl';
 
-const Window = ({title, titlebar, bars, actions, ...props}) => (
-    <div className={style.windowOuter}>
-        <TitleBar title={title} actions={actions} {...titlebar}/>
-        {bars}
-        <div className={style.windowInner}>
-            <View>
-                {props.children}
-            </View>
-        </div>
-    </div>
-)
+class Window extends React.Component {
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            fullscreen: props.fullscreen
+        }
+    }
+
+    setFullscreen () {
+        this.setState(prevState => {
+            const {actions} = this.props
+            const fullscreen = !!!prevState.fullscreen
+            actions.fullscreen(fullscreen)
+            return {fullscreen}
+        })
+    }
+
+    render () {
+        const {title, titlebar, bars, ...props} = this.props
+        const {fullscreen} = this.state
+
+        const actions = {
+            ...this.props.actions,
+            fullscreen: this.setFullscreen.bind(this)
+        }
+
+        return (
+            <div className={style.windowOuter}>
+                <TitleBar title={title} actions={actions} fullscreen={fullscreen} {...titlebar}/>
+                {bars}
+                <div className={style.windowInner} style={{
+                    height: fullscreen ? '100%' : 'calc(100% - var(--Window-handler-height))'
+                }}>
+                    <View>
+                        {props.children}
+                    </View>
+                </div>
+            </div>
+        )
+    }
+}
+
+Window.defaultProps = {
+    fullscreen: false
+}
+
+Window.propTypes = {
+    fullscreen: PropTypes.bool
+}
 
 const DemoWindow = ({opacity = 0.5, ...props}) => (
     <div className={style.demoWindow} style={{
