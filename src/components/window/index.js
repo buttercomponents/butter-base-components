@@ -34,17 +34,15 @@ class Window extends React.Component {
     }
 
     return (
-      <div className={style.windowOuter}>
-        <TitleBar title={title} actions={actions} fullscreen={fullscreen} {...titlebar} />
-        {bars}
-        <div className={style.windowInner} style={{
-          height: fullscreen ? '100%' : 'calc(100% - var(--Window-handler-height))'
-        }}>
-          <View>
-            {props.children}
-          </View>
+        <div className={style.windowOuter}>
+            <TitleBar title={title} actions={actions} fullscreen={fullscreen} {...titlebar} />
+            {bars}
+            <div className={style.windowInner} style={{
+                height: fullscreen ? '100%' : 'calc(100% - var(--Window-handler-height))'
+            }}>
+                {props.children}
+            </div>
         </div>
-      </div>
     )
   }
 }
