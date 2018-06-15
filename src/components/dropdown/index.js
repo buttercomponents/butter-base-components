@@ -44,7 +44,8 @@ class Dropdown extends Component {
             type: "text",
             item: DropdownItem,
             label: LabelItem
-        }
+        },
+        options: {}
     }
 
     static propTypes = {
