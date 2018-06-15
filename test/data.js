@@ -132,7 +132,8 @@ export default {
         'Viper',
         'Wolf',
         'Yak',
-        'Zebra'
+        'Zebra',
+        'Very Long Fake Animal Name',
       ]
     }],
     color: [
