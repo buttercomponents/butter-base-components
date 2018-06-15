@@ -85,38 +85,45 @@ class Dropdown extends Component {
         const Label = props.config.label
         const {options} = props
 
-        const selected = options[state.selected]
+        let selected = options[state.selected]
+        let toggle = true
 
         const dropdownStyle = style[`dropdown-${props.config.type}`]
         let activeStyle = state.open ? 'open':''
 
-        if (! options || ! options.length) {
-            return (<div className={`${dropdownStyle}  ${activeStyle}`} tabIndex="-1" onBlur={this.close.bind(this)}>
-                <DropdownToggle {...props} toggle={false}>
-                    <Label value={'Default'}/>
-                </DropdownToggle>
-            </div>)
+        const keys = Object.keys(options)
+
+        if (! keys.length) {
+            selected = 'Default',
+            toggle = false
         }
 
         return  (
-            <div className={`${dropdownStyle}  ${activeStyle}`} tabIndex="-1" onBlur={this.close.bind(this)}>
-                <DropdownToggle {...props} onClick={this.toggle.bind(this)}>
+            <div className={`${dropdownStyle}  ${activeStyle}`} tabIndex="-1" onBlur={this.close.bind(this)} role="dropdown">
+                <DropdownToggle {...props}
+                                onClick={toggle ? this.toggle.bind(this): () => {}}
+                                toggle={toggle}>
                     <Label value={selected} />
                 </DropdownToggle>
-                <div className="dropdown-menu">
-                    <ul className={style.items}>
-                        {
-                            Object.keys(props.options).map((k, i) => (
-                                state.selected === k ? null :
-                                <Item
-                                    key={i}
-                                    onSelect={this.onSelect.bind(this, k)}
-                                    value={props.options[k]} />
-                            ))
-                        }
-                    </ul>
-                    {props.children}
+                {toggle && <div style={{height: 0, overflow: 'visible'}}>
+                    <div className="dropdown-menu">
+
+                        <ul className={style.items}>
+                            {
+                                keys.map((k, i) => (
+                                    state.selected === k ? null :
+                                    <Item
+                                        key={i}
+                                        onSelect={this.onSelect.bind(this, k)}
+                                        value={props.options[k]} />
+                                ))
+                            }
+                        </ul>
+                        {props.children}
+                    </div>
                 </div>
+                }
+
             </div>
         )
     }
