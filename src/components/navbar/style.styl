@@ -33,10 +33,17 @@
         flex: 0
         white-space: nowrap
 
+    & > *[role=navbar-left]
+        flex: 1
+        display: flex
+        justify-content: flex-start
+
     & > *[role=navbar-center]
+        flex: 1
         flex: none
 
-    & > *[role=navbar-left]
+    & > *[role=navbar-right]
+        flex: 1
         display: flex
         justify-content: flex-end
 
